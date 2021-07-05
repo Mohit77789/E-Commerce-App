@@ -1,16 +1,209 @@
+import 'package:ecommerce/Pages/Product.dart';
+
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+var bannerImages = [
+  "assets/images/Home2.png",
+  "assets/images/Home1.png",
+  "assets/images/Home3.png",
+  "assets/images/Home4.png",
+  "assets/images/Home5.png",
+  "assets/images/one.png"
+];
+
+class HomePage extends StatefulWidget {
+  // const HomePage({Key? key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Audio"),
-      ),
-      body: Center(
-        child: Container(
-          child: Text("data"),
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        title: Text(
+          "Audio City",
+          style: TextStyle(
+              fontSize: 35, color: Colors.black, fontFamily: 'Samantha'),
         ),
+      ),
+      bottomNavigationBar: Container(
+        height: 70,
+        width: 12,
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            buildContainer(Icons.home, isSelected: true),
+            buildContainer(Icons.shopping_cart),
+            buildContainer(Icons.person)
+          ],
+        ),
+      ),
+      body: GestureDetector(
+        onTap: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Product())),
+        child: Container(
+          height: screenHeight,
+          width: screenWidth,
+          child: SafeArea(
+              child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                BannerWidget(),
+                Container(
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    //Downside scrolling starts here
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: <Widget>[
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20.0)),
+                            ),
+                          ),
+                          ClipRRect(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20.0)),
+                            child: Image.asset(
+                              "assets/images/sc1.png",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          ClipRRect(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20.0)),
+                            child: Image.asset(
+                              "assets/images/sc2.png",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          ClipRRect(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20.0)),
+                            child: Image.asset(
+                              "assets/images/sc3.png",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          ClipRRect(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20.0)),
+                            child: Image.asset(
+                              "assets/images/sc4.png",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ), //
+                  ),
+                ),
+              ],
+            ),
+          )),
+        ),
+      ),
+    );
+  }
+
+  Container buildContainer(IconData icon, {isSelected = false}) {
+    return Container(
+      decoration: BoxDecoration(
+        color: isSelected ? Colors.indigo.shade900 : Colors.white,
+        shape: BoxShape.circle,
+        boxShadow: isSelected
+            ? [
+                BoxShadow(
+                    color: Colors.indigo.shade800,
+                    blurRadius: 10,
+                    spreadRadius: 2)
+              ]
+            : [],
+      ),
+      height: 50,
+      width: 50,
+      child: Icon(
+        icon,
+        color: isSelected ? Colors.white : Colors.black,
+      ),
+    );
+  }
+}
+
+class BannerWidget extends StatelessWidget {
+  const BannerWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+    var screenHeight = MediaQuery.of(context).size.height;
+
+    PageController controller =
+        PageController(viewportFraction: 0.8, initialPage: 1);
+
+    List<Widget> banners = [];
+
+    for (int x = 0; x < bannerImages.length; x++) {
+      var bannerView = Padding(
+        padding: EdgeInsets.all(10.0),
+        child: Container(
+          child: Stack(
+            fit: StackFit.expand,
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black,
+                        offset: Offset(2.0, 4.0),
+                        blurRadius: 5.0,
+                        spreadRadius: 1.0,
+                      )
+                    ]),
+              ),
+              ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                child: Image.asset(
+                  bannerImages[x],
+                  fit: BoxFit.cover,
+                ),
+              )
+            ],
+          ),
+        ),
+      );
+      banners.add(bannerView);
+    }
+    return Container(
+      width: screenWidth,
+      height: screenHeight * 9 / 16,
+      child: PageView(
+        controller: controller,
+        scrollDirection: Axis.horizontal,
+        children: banners,
       ),
     );
   }

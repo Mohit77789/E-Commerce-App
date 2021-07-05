@@ -38,6 +38,7 @@ class _SplashPageState extends State<SplashPage> {
               Image.asset(
                 "assets/images/one.png",
                 fit: BoxFit.cover,
+                width: 500,
                 height: 300,
               ),
               SizedBox(
