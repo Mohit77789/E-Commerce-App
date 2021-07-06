@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(55, 71, 166, 1),
         centerTitle: true,
         title: Text(
           "Audio City",
@@ -127,8 +127,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  }
+}
 
 class BannerWidget extends StatelessWidget {
   const BannerWidget({Key? key}) : super(key: key);
@@ -136,7 +135,6 @@ class BannerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
-    var screenHeight = MediaQuery.of(context).size.height;
 
     PageController controller =
         PageController(viewportFraction: 0.8, initialPage: 1);
@@ -177,7 +175,7 @@ class BannerWidget extends StatelessWidget {
     }
     return Container(
       width: screenWidth,
-      height: screenHeight * 9 / 16,
+      height: 370,
       child: PageView(
         controller: controller,
         scrollDirection: Axis.horizontal,
