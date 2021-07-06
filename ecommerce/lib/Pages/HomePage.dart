@@ -1,5 +1,5 @@
 import 'package:ecommerce/Pages/Product.dart';
-
+import 'package:ecommerce/widgets/navigation.dart';
 import 'package:flutter/material.dart';
 
 var bannerImages = [
@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: Container(
-        height: 70,
+        height: 60,
         width: 12,
         color: Colors.white,
         child: Row(
@@ -128,29 +128,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Container buildContainer(IconData icon, {isSelected = false}) {
-    return Container(
-      decoration: BoxDecoration(
-        color: isSelected ? Colors.indigo.shade900 : Colors.white,
-        shape: BoxShape.circle,
-        boxShadow: isSelected
-            ? [
-                BoxShadow(
-                    color: Colors.indigo.shade800,
-                    blurRadius: 10,
-                    spreadRadius: 2)
-              ]
-            : [],
-      ),
-      height: 50,
-      width: 50,
-      child: Icon(
-        icon,
-        color: isSelected ? Colors.white : Colors.black,
-      ),
-    );
   }
-}
 
 class BannerWidget extends StatelessWidget {
   const BannerWidget({Key? key}) : super(key: key);

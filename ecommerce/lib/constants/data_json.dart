@@ -2,7 +2,6 @@ List dataItems = [
   {
     "id": 1,
     "code": "Boat Airdopes",
-  
     "img": "assets/images/boat1.jpeg",
     "price": 1799,
     "promotionPrice": 1799,
@@ -10,7 +9,6 @@ List dataItems = [
   {
     "id": 2,
     "code": "Boat Airdopes",
-    
     "img": "assets/images/boat1.jpeg",
     "price": 1799,
     "promotionPrice": 1899,
@@ -18,7 +16,6 @@ List dataItems = [
   {
     "id": 3,
     "code": "Boat Airdopes",
-    
     "img": "assets/images/boat1.jpeg",
     "price": 1899,
     "promotionPrice": 1899,
@@ -26,7 +23,6 @@ List dataItems = [
   {
     "id": 4,
     "code": "Boat Airdopes",
-    
     "img": "assets/images/boat1.jpeg",
     "price": 1999,
     "promotionPrice": 1999,
@@ -34,7 +30,6 @@ List dataItems = [
   {
     "id": 5,
     "code": "Boat Airdopes",
-    
     "img": "assets/images/boat1.jpeg",
     "price": 1599,
     "promotionPrice": 1599,
@@ -42,7 +37,48 @@ List dataItems = [
   {
     "id": 6,
     "code": "Boat Airdopes",
-    
+    "img": "assets/images/boat1.jpeg",
+    "price": 1599,
+    "promotionPrice": 1599,
+  },
+  {
+    "id": 7,
+    "code": "Boat Airdopes",
+    "img": "assets/images/boat1.jpeg",
+    "price": 1799,
+    "promotionPrice": 1799,
+  },
+  {
+    "id": 8,
+    "code": "Boat Airdopes",
+    "img": "assets/images/boat1.jpeg",
+    "price": 1799,
+    "promotionPrice": 1899,
+  },
+  {
+    "id": 9,
+    "code": "Boat Airdopes",
+    "img": "assets/images/boat1.jpeg",
+    "price": 1899,
+    "promotionPrice": 1899,
+  },
+  {
+    "id": 10,
+    "code": "Boat Airdopes",
+    "img": "assets/images/boat1.jpeg",
+    "price": 1999,
+    "promotionPrice": 1999,
+  },
+  {
+    "id": 11,
+    "code": "Boat Airdopes",
+    "img": "assets/images/boat1.jpeg",
+    "price": 1599,
+    "promotionPrice": 1599,
+  },
+  {
+    "id": 12,
+    "code": "Boat Airdopes",
     "img": "assets/images/boat1.jpeg",
     "price": 1599,
     "promotionPrice": 1599,
