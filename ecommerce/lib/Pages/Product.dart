@@ -16,7 +16,7 @@ class _ProductState extends State<Product> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(55, 71, 166, 1),
         centerTitle: true,
         title: Text(
           "Audio City",
@@ -58,7 +58,7 @@ class _ProductState extends State<Product> {
                             id: dataItems[index]["id"].toString(),
                             name: dataItems[index]["name"],
                             code: dataItems[index]["code"],
-                             img: dataItems[index]["img"],
+                            img: dataItems[index]["img"],
                             price: dataItems[index]["price"].toString()),
                       ),
                     );

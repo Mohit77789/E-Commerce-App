@@ -61,6 +61,10 @@ class _SplashPageState extends State<SplashPage> {
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(36.0),
+                        ),
+                        alignLabelWithHint: true,
                         hintText: "Enter Username",
                         labelText: "Username",
                       ),
@@ -75,9 +79,16 @@ class _SplashPageState extends State<SplashPage> {
                         setState(() {});
                       },
                     ),
+                    SizedBox(
+                      height: 20,
+                    ),
                     TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(36.0),
+                        ),
+                        alignLabelWithHint: true,
                         hintText: "Enter Password",
                         labelText: "Password",
                       ),

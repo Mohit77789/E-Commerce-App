@@ -27,6 +27,15 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(55, 71, 166, 1),
+        centerTitle: true,
+        title: Text(
+          "Audio City",
+          style: TextStyle(
+              fontSize: 35, color: Colors.black, fontFamily: "Samantha"),
+        ),
+      ),
       body: getBody(),
       bottomSheet: getBottom(),
     );
@@ -34,17 +43,57 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
 
   Widget getBottom() {
     var size = MediaQuery.of(context).size;
+    var screenWidth = MediaQuery.of(context).size.width;
     return Container(
       height: 80,
       width: size.width,
-      child: TextButton(
-          onPressed: () {
-            // your add cart here
-          },
-          child: Text(
-            "ADD TO CART",
-            style: TextStyle(fontSize: 18, color: white),
-          )),
+      child: Row(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0),
+            child: InkWell(
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    border: Border.all(color: black.withOpacity(0.5))),
+                width: screenWidth / 2,
+                height: 50,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.indigo),
+                    onPressed: () {},
+                    child: Text(
+                      "ADD TO CART",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    )),
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          SizedBox(
+            width: 166,
+            height: 50,
+            // child: Padding(
+            //   padding: const EdgeInsets.only(left: 30.0),
+            child: ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Colors.indigo),
+                onPressed: () {},
+                child: Text(
+                  "BUY NOW",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                )),
+          ),
+        ],
+      ),
     );
   }
 
@@ -54,17 +103,17 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         padding: const EdgeInsets.only(bottom: 60),
         child: ListView(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 20),
-              child: InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Icon(Icons.arrow_back_ios)),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.only(left: 20, top: 20),
+            //   child: InkWell(
+            //     onTap: () {
+            //       Navigator.pop(context);
+            //     },
+            //     child: Align(
+            //         alignment: Alignment.centerLeft,
+            //         child: Icon(Icons.arrow_back_ios)),
+            //   ),
+            // ),
             SizedBox(
               height: 10,
             ),
@@ -77,8 +126,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       image: DecorationImage(
-                          image: AssetImage(widget.img),
-                          fit: BoxFit.cover)),
+                          image: AssetImage(widget.img), fit: BoxFit.cover)),
                 ),
               ),
             ),
@@ -123,7 +171,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   ),
                   Flexible(
                     child: Text(
-                      widget.price,
+                      "Rs. " + widget.price,
                       style: TextStyle(fontSize: 25, height: 1.5),
                     ),
                   ),
@@ -165,20 +213,20 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           width: 25,
                           height: 25,
                           child: Icon(
-                            Icons.exposure_minus_1_outlined,
+                            Icons.remove,
                             color: black.withOpacity(0.5),
                           ),
                         ),
                       ),
                       SizedBox(
-                        width: 25,
+                        width: 15,
                       ),
                       Text(
                         qty.toString(),
                         style: TextStyle(fontSize: 25),
                       ),
                       SizedBox(
-                        width: 25,
+                        width: 15,
                       ),
                       InkWell(
                         onTap: () {
@@ -195,7 +243,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           width: 25,
                           height: 25,
                           child: Icon(
-                            Icons.plus_one,
+                            Icons.add,
                             color: black.withOpacity(0.5),
                           ),
                         ),
