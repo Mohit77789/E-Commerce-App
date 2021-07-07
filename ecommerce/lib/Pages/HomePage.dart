@@ -20,6 +20,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
@@ -33,19 +34,7 @@ class _HomePageState extends State<HomePage> {
               fontSize: 35, color: Colors.black, fontFamily: 'Samantha'),
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 60,
-        width: 12,
-        color: Colors.white,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            buildContainer(Icons.home, isSelected: true),
-            buildContainer(Icons.shopping_cart),
-            buildContainer(Icons.person)
-          ],
-        ),
-      ),
+      bottomNavigationBar: NavBar(),
       body: GestureDetector(
         onTap: () => Navigator.push(
             context, MaterialPageRoute(builder: (context) => Product())),

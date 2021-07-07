@@ -58,7 +58,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                 width: screenWidth / 2,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
-                        // begins:Alignment.topCenter,
+                       
                         colors: [
                           const Color(0xff303C87),
                           const Color(0xff171F53)

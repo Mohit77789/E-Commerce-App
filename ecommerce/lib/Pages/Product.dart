@@ -34,14 +34,32 @@ class _ProductState extends State<Product> {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  "Airdopes",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+            child: AnimatedContainer(
+              duration: Duration(microseconds: 500),
+              height: 50,
+              width: 150,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                    const Color(0xff303C87),
+                    const Color(0xff171F53)
+                  ]),
+                  borderRadius: BorderRadius.circular(20.0),
+                  boxShadow: [
+                    BoxShadow(
+                        offset: Offset(5.0, 15.0),
+                        color: Color(0xff303C87),
+                        blurRadius: 10.0),
+                  ]),
+              child: Center(
+                child: Text(
+                  "AIRDOPES",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
                 ),
-              ],
+              ),
             ),
           ),
           SizedBox(
@@ -78,6 +96,7 @@ class _ProductState extends State<Product> {
                                   width: 150,
                                   height: 150,
                                   decoration: BoxDecoration(
+                                    
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(20.0)),
                                       image: DecorationImage(

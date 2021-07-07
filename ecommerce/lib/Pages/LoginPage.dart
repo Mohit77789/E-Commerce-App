@@ -2,9 +2,8 @@ import 'package:ecommerce/Pages/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/Pages/Signup.dart';
 
-
 class LoginPage extends StatefulWidget {
-  const LoginPage({ Key? key }) : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -106,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 40.0,
                     ),
                     Material(
-                      color: Colors.deepPurple,
+                      color: Colors.white,
                       borderRadius:
                           BorderRadius.circular(changeButton ? 20 : 8),
                       child: InkWell(
@@ -115,6 +114,18 @@ class _LoginPageState extends State<LoginPage> {
                           duration: Duration(milliseconds: 100),
                           height: 50.0,
                           width: changeButton ? 50 : 150,
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(colors: [
+                                const Color(0xff303C87),
+                                const Color(0xff171F53)
+                              ]),
+                              borderRadius: BorderRadius.circular(20.0),
+                              boxShadow: [
+                                BoxShadow(
+                                    offset: Offset(5.0, 15.0),
+                                    color: Color(0xff303C87),
+                                    blurRadius: 30.0),
+                              ]),
                           alignment: Alignment.center,
                           child: changeButton
                               ? Icon(
@@ -133,30 +144,43 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     SizedBox(
-                      height: 20.0,
+                      height: 30,
                     ),
-                    ElevatedButton(
-                      child: Text(
-                        "Signup",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                    SizedBox(
+                      height: 50.0,
+                      child: InkWell(
+                        onTap: () => Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Signup())),
+                        child: AnimatedContainer(
+                          duration: Duration(microseconds: 500),
+                          height: 50,
+                          width: 150,
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                  // begins:Alignment.topCenter,
+                                  colors: [
+                                    const Color(0xff303C87),
+                                    const Color(0xff171F53)
+                                  ]),
+                              borderRadius: BorderRadius.circular(20.0),
+                              boxShadow: [
+                                BoxShadow(
+                                    offset: Offset(5.0, 15.0),
+                                    color: Color(0xff303C87),
+                                    blurRadius: 30.0),
+                              ]),
+                          child: Center(
+                            child: Text(
+                              "Signup",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                      style: ElevatedButton.styleFrom(
-                          shape: new RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(8.0),
-                          ),
-                          primary: Colors.deepPurple,
-                          minimumSize: Size(150, 50)),
-                      onPressed: () => {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Signup(),
-                            )),
-                      },
                     ),
                   ],
                 ),
@@ -167,5 +191,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
- 
 }
