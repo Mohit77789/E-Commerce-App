@@ -16,12 +16,15 @@ class _ProductState extends State<Product> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(55, 71, 166, 1),
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.grey.shade200,
         centerTitle: true,
         title: Text(
           "Audio City",
           style: TextStyle(
-              fontSize: 35, color: Colors.black, fontFamily: "Samantha"),
+              fontSize: 35,
+              color: Color.fromRGBO(55, 71, 166, 1),
+              fontFamily: "Samantha"),
         ),
       ),
       body: getBody(),
@@ -96,7 +99,6 @@ class _ProductState extends State<Product> {
                                   width: 150,
                                   height: 150,
                                   decoration: BoxDecoration(
-                                    
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(20.0)),
                                       image: DecorationImage(

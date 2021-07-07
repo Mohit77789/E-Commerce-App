@@ -13,12 +13,15 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(55, 71, 166, 1),
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.grey.shade200,
         centerTitle: true,
         title: Text(
           "Audio City c",
           style: TextStyle(
-              fontSize: 35, color: Colors.black, fontFamily: 'Samantha'),
+              fontSize: 35,
+              color: Color.fromRGBO(55, 71, 166, 1),
+              fontFamily: "Samantha"),
         ),
       ),
       bottomNavigationBar: NavBar(),

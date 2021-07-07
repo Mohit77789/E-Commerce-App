@@ -1,4 +1,4 @@
-import 'package:ecommerce/widgets/navigation.dart';
+// import 'package:ecommerce/widgets/navigation.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
@@ -11,17 +11,66 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(55, 71, 166, 1),
-        centerTitle: true,
-        title: Text(
-          "Audio City p",
-          style: TextStyle(
-              fontSize: 35, color: Colors.black, fontFamily: 'Samantha'),
-        ),
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
+    return Container(
+      height: screenHeight,
+      color: Colors.white,
+      width: screenWidth,
+      child: Stack(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(left: 130, top: 70),
+            child: AnimatedContainer(
+              duration: Duration(microseconds: 500),
+              height: 50,
+              width: 150,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                    const Color(0xff303C87),
+                    const Color(0xff171F53)
+                  ]),
+                  borderRadius: BorderRadius.circular(20.0),
+                  boxShadow: [
+                    BoxShadow(
+                        offset: Offset(5.0, 15.0),
+                        color: Color(0xff303C87),
+                        blurRadius: 10.0),
+                  ]),
+              child: Container(
+                height: 60,
+                child: Center(
+                  child: Text(
+                    "MY PROFILE",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 150),
+            child: Container(
+              height: 60,
+              color: Colors.grey.shade200,
+              child: Center(
+                child: Text(
+                  "FAVOURITES",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
-      bottomNavigationBar: NavBar(),
     );
   }
 }
