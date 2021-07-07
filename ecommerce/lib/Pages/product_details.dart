@@ -28,12 +28,15 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.indigo,
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.grey.shade200,
         centerTitle: true,
         title: Text(
           "Audio City",
           style: TextStyle(
-              fontSize: 35, color: Colors.black, fontFamily: "Samantha"),
+              fontSize: 35,
+              color: Color.fromRGBO(55, 71, 166, 1),
+              fontFamily: "Samantha"),
         ),
       ),
       body: getBody(),
@@ -57,12 +60,10 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                 height: 50,
                 width: screenWidth / 2,
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                       
-                        colors: [
-                          const Color(0xff303C87),
-                          const Color(0xff171F53)
-                        ]),
+                    gradient: LinearGradient(colors: [
+                      const Color(0xff303C87),
+                      const Color(0xff171F53)
+                    ]),
                     borderRadius: BorderRadius.circular(20.0),
                     boxShadow: [
                       BoxShadow(
@@ -131,17 +132,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         padding: const EdgeInsets.only(bottom: 60),
         child: ListView(
           children: <Widget>[
-            // Padding(
-            //   padding: const EdgeInsets.only(left: 20, top: 20),
-            //   child: InkWell(
-            //     onTap: () {
-            //       Navigator.pop(context);
-            //     },
-            //     child: Align(
-            //         alignment: Alignment.centerLeft,
-            //         child: Icon(Icons.arrow_back_ios)),
-            //   ),
-            // ),
+          
             SizedBox(
               height: 10,
             ),
@@ -149,12 +140,23 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               elevation: 2,
               child: Hero(
                 tag: widget.id.toString(),
-                child: Container(
+                child: AnimatedContainer(
+                  duration: Duration(microseconds: 500),
                   height: 400,
                   decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [
+                        const Color(0xff303C87),
+                        const Color(0xff171F53)
+                      ]),
                       borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       image: DecorationImage(
-                          image: AssetImage(widget.img), fit: BoxFit.cover)),
+                          image: AssetImage(widget.img), fit: BoxFit.cover),
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(5.0, 15.0),
+                            color: Color(0xff303C87),
+                            blurRadius: 10.0),
+                      ]),
                 ),
               ),
             ),

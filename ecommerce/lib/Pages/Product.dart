@@ -71,23 +71,55 @@ class _ProductState extends State<Product> {
           Wrap(
             children: List.generate(dataItems.length, (index) {
               return InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => ProductDetailPage(
-                            id: dataItems[index]["id"].toString(),
-                            name: dataItems[index]["name"],
-                            code: dataItems[index]["code"],
-                            img: dataItems[index]["img"],
-                            price: dataItems[index]["price"].toString()),
-                      ),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Card(
-                        elevation: 2,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ProductDetailPage(
+                          id: dataItems[index]["id"].toString(),
+                          name: dataItems[index]["name"],
+                          code: dataItems[index]["code"],
+                          img: dataItems[index]["img"],
+                          price: dataItems[index]["price"].toString()),
+                    ),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  // child: AnimatedContainer(
+                  //   duration: Duration(microseconds: 500),
+                  //   // height: 50,
+                  //   // width: 150,
+                  //   decoration: BoxDecoration(
+                  //       gradient: LinearGradient(colors: [
+                  //         const Color(0xff303C87),
+                  //         const Color(0xff171F53)
+                  //       ]),
+                  //       borderRadius: BorderRadius.circular(20.0),
+                  //       boxShadow: [
+                  //         BoxShadow(
+                  //             offset: Offset(5.0, 15.0),
+                  //             color: Color(0xff303C87),
+                  //             blurRadius: 10.0),
+                  //       ]),
+                  child: Card(
+                      elevation: 2,
+                      child: AnimatedContainer(
+                        duration: Duration(microseconds: 500),
+                        // height: 50,
+                        // width: 150,
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(colors: [
+                              const Color(0xff303C87),
+                              const Color(0xff171F53)
+                            ]),
+                            borderRadius: BorderRadius.circular(10.0),
+                            boxShadow: [
+                              BoxShadow(
+                                  offset: Offset(5.0, 15.0),
+                                  color: Color(0xff303C87),
+                                  blurRadius: 10.0),
+                            ]),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
@@ -115,7 +147,10 @@ class _ProductState extends State<Product> {
                               padding: const EdgeInsets.only(left: 15),
                               child: Text(
                                 dataItems[index]['code'],
-                                style: TextStyle(fontSize: 16),
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
                               ),
                             ),
                             SizedBox(
@@ -125,15 +160,20 @@ class _ProductState extends State<Product> {
                               padding: const EdgeInsets.only(left: 15),
                               child: Text(
                                 " Rs." + dataItems[index]['price'].toString(),
-                                style: TextStyle(fontSize: 16),
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
                               ),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                           ],
-                        )),
-                  ));
+                        ),
+                      )),
+                ),
+              );
             }),
           )
         ],
