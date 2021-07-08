@@ -57,7 +57,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             padding: const EdgeInsets.only(left: 20.0),
             child: InkWell(
               onTap: () {
-              //  Cart.addItem(widget.id,widget.name,widget.price);
+                //  Cart.addItem(widget.id,widget.name,widget.price);
               },
               child: AnimatedContainer(
                 duration: Duration(microseconds: 500),

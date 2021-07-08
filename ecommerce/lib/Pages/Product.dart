@@ -32,6 +32,7 @@ class _ProductState extends State<Product> {
   }
 
   Widget getBody() {
+    var screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: ListView(
         children: <Widget>[
@@ -85,14 +86,13 @@ class _ProductState extends State<Product> {
                   );
                 },
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                 
+                  padding: const EdgeInsets.all(12),
                   child: Card(
                       elevation: 2,
                       child: AnimatedContainer(
                         duration: Duration(microseconds: 500),
                         // height: 50,
-                        // width: 150,
+                        width: (screenWidth / 2) - 32,
                         decoration: BoxDecoration(
                             gradient: LinearGradient(colors: [
                               const Color(0xff303C87),
