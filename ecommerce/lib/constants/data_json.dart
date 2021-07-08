@@ -1,10 +1,3 @@
-import 'package:flutter/material.dart';
-
-List itemsTab = [
-  {"icon": Icons.home, "size": 28.0},
-  {"icon": Icons.shopping_cart, "size": 28.0},
-  {"icon": Icons.person, "size": 28.0},
-];
 List dataItems = [
   {
     "id": "1",

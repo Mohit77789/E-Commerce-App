@@ -91,7 +91,8 @@ class _ProductState extends State<Product> {
                       elevation: 2,
                       child: AnimatedContainer(
                         duration: Duration(microseconds: 500),
-                       
+                        // height: 50,
+                        // width: 150,
                         decoration: BoxDecoration(
                             gradient: LinearGradient(colors: [
                               const Color(0xff303C87),

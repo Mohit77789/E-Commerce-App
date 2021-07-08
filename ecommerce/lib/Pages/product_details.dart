@@ -1,3 +1,4 @@
+import 'package:ecommerce/Pages/Cart.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ecommerce/theme/colors.dart';
@@ -55,6 +56,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           Padding(
             padding: const EdgeInsets.only(left: 20.0),
             child: InkWell(
+              onTap: () {
+                Navigator.of(context).pushNamed(Cart.routeName);
+              },
               child: AnimatedContainer(
                 duration: Duration(microseconds: 500),
                 height: 50,
