@@ -63,7 +63,9 @@ class _NavBarState extends State<NavBar> {
           boxShadow: selectedIndex == index
               ? [
                   BoxShadow(
-                      color: Color(0xff171F53), blurRadius: 5, spreadRadius: 2)
+                      color: Color(0xff171F53),
+                      blurRadius: 2.5,
+                      spreadRadius: 0)
                 ]
               : [],
         ),

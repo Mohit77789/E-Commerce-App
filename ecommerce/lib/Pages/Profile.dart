@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Profile extends StatefulWidget {
   // const Profile({Key? key}) : super(key: key);
@@ -43,7 +43,7 @@ class _ProfileState extends State<Profile> {
                   child: Center(
                     child: Text(
                       "MY PROFILE",
-                      style: TextStyle(
+                      style: GoogleFonts.raleway(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
@@ -63,7 +63,7 @@ class _ProfileState extends State<Profile> {
                     "FAVOURITES",
                     style: TextStyle(
                       color: Colors.black,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                       fontSize: 18,
                     ),
                   ),
