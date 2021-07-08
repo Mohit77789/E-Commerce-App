@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: SplashPage(),
       routes: {
-        Cart.routeName:(context)=>Cart(),
+        Cart.routeName:(context)=>Cart()
       },
     );
   }

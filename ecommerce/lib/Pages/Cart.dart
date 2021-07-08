@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:provider/provider.dart';
 
 class Cart extends StatefulWidget {
   static const routeName = '/cart';
@@ -10,6 +11,7 @@ class Cart extends StatefulWidget {
 class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
+    // final cart = Provider.of<Cart>(context);
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
@@ -64,21 +66,37 @@ class _CartState extends State<Cart> {
               ),
             ),
           ),
-          // ListView.builder(itemBuilder: itemBuilder)
+          // ListView.builder(itemBuilder: itemBuilder),
         ],
       ),
     );
   }
 }
 
-
 class CartItem extends StatelessWidget {
-  const CartItem({ Key? key }) : super(key: key);
+  final String pid;
+  final String productid;
+  final String price;
+  final int qty;
+  final String name;
+
+  CartItem(
+    this.pid,
+    this.productid,
+    this.name,
+    this.price,
+    this.qty,
+  );
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      
+      child: ListTile(
+        // leading: ,
+        title: Text(name),
+        subtitle: Text("Total:\$${(price * qty)}"),
+        trailing: Text("$qty"),
+      ),
     );
   }
 }
