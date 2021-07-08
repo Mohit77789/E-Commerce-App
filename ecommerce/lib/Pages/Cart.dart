@@ -34,7 +34,7 @@ class _CartState extends State<Cart> {
       child: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(left: 130.0),
+            padding: const EdgeInsets.only(left: 130.0, top: 10),
             child: AnimatedContainer(
               duration: Duration(microseconds: 500),
               height: 40,
