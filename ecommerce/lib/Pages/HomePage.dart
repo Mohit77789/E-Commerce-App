@@ -1,5 +1,5 @@
 import 'package:ecommerce/Pages/Product.dart';
-import 'package:ecommerce/widgets/navigation.dart';
+// import 'package:ecommerce/widgets/navigation.dart';
 import 'package:flutter/material.dart';
 
 var bannerImages = [
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
               fontFamily: "Samantha"),
         ),
       ),
-      bottomNavigationBar: NavBar(),
+      // bottomNavigationBar: NavBar(),
       body: GestureDetector(
         onTap: () => Navigator.push(
             context, MaterialPageRoute(builder: (context) => Product())),

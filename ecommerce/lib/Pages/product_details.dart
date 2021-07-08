@@ -132,7 +132,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         padding: const EdgeInsets.only(bottom: 60),
         child: ListView(
           children: <Widget>[
-          
             SizedBox(
               height: 10,
             ),

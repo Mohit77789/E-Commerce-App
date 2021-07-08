@@ -1,4 +1,4 @@
-import 'package:ecommerce/widgets/navigation.dart';
+// import 'package:ecommerce/widgets/navigation.dart';
 import 'package:flutter/material.dart';
 
 class Cart extends StatefulWidget {
@@ -24,7 +24,11 @@ class _CartState extends State<Cart> {
               fontFamily: "Samantha"),
         ),
       ),
-      bottomNavigationBar: NavBar(),
+      body: getBody(),
     );
+  }
+
+  Widget getBody() {
+    return Container();
   }
 }

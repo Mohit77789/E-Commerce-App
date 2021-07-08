@@ -86,28 +86,12 @@ class _ProductState extends State<Product> {
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
-                  // child: AnimatedContainer(
-                  //   duration: Duration(microseconds: 500),
-                  //   // height: 50,
-                  //   // width: 150,
-                  //   decoration: BoxDecoration(
-                  //       gradient: LinearGradient(colors: [
-                  //         const Color(0xff303C87),
-                  //         const Color(0xff171F53)
-                  //       ]),
-                  //       borderRadius: BorderRadius.circular(20.0),
-                  //       boxShadow: [
-                  //         BoxShadow(
-                  //             offset: Offset(5.0, 15.0),
-                  //             color: Color(0xff303C87),
-                  //             blurRadius: 10.0),
-                  //       ]),
+                 
                   child: Card(
                       elevation: 2,
                       child: AnimatedContainer(
                         duration: Duration(microseconds: 500),
-                        // height: 50,
-                        // width: 150,
+                       
                         decoration: BoxDecoration(
                             gradient: LinearGradient(colors: [
                               const Color(0xff303C87),

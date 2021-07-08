@@ -1,4 +1,5 @@
-import 'package:ecommerce/Pages/HomePage.dart';
+// import 'package:ecommerce/Pages/HomePage.dart';
+import 'package:ecommerce/widgets/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/Pages/Signup.dart';
 
@@ -21,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
       });
       await Future.delayed(Duration(milliseconds: 50));
       await Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
+          context, MaterialPageRoute(builder: (context) => NavBar()));
       setState(() {
         changeButton = false;
       });
