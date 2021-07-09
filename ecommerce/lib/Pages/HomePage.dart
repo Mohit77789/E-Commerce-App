@@ -26,16 +26,20 @@ class _HomePageState extends State<HomePage> {
     var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [const Color(0xff1B2150), const Color(0xff303C87)]),
+          ),
+        ),
+        iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Colors.grey.shade200,
         centerTitle: true,
         title: Text(
           "AudioCity",
-          style: GoogleFonts.rakkas(
-              fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
+          style: GoogleFonts.rakkas(fontSize: 40, color: Colors.white),
         ),
       ),
-      // bottomNavigationBar: NavBar(),
       body: GestureDetector(
         onTap: () => Navigator.push(
             context, MaterialPageRoute(builder: (context) => Product())),
@@ -59,6 +63,10 @@ class _HomePageState extends State<HomePage> {
                             height: 15,
                           ),
                           Container(
+                            child: Text(
+                              "Check in Store",
+                              style: TextStyle(fontSize: 30),
+                            ),
                             decoration: BoxDecoration(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20.0)),
