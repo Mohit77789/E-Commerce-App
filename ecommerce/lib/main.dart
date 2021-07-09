@@ -1,6 +1,5 @@
 import 'package:ecommerce/Pages/splash.dart';
 import 'package:flutter/material.dart';
-
 import 'Pages/Cart.dart';
 
 void main() {
