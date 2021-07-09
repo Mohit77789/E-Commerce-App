@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:ecommerce/constants/data_json.dart';
 import 'package:ecommerce/Pages/product_details.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Product extends StatefulWidget {
 //  const Product({Key? key}) : super(key: key);
@@ -20,11 +20,9 @@ class _ProductState extends State<Product> {
         backgroundColor: Colors.grey.shade200,
         centerTitle: true,
         title: Text(
-          "Audio City",
-          style: TextStyle(
-              fontSize: 35,
-              color: Color.fromRGBO(55, 71, 166, 1),
-              fontFamily: "Samantha"),
+          "AudioCity",
+          style: GoogleFonts.rakkas(
+              fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
         ),
       ),
       body: getBody(),
@@ -57,9 +55,9 @@ class _ProductState extends State<Product> {
               child: Center(
                 child: Text(
                   "AIRDOPES",
-                  style: TextStyle(
+                  style: GoogleFonts.raleway(
                     color: Colors.white,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                     fontSize: 18,
                   ),
                 ),

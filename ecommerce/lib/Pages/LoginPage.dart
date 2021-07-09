@@ -1,4 +1,5 @@
 // import 'package:ecommerce/Pages/HomePage.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ecommerce/widgets/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/Pages/Signup.dart';
@@ -47,13 +48,11 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 20.0,
               ),
-              Text(
-                "Welcome $name",
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              Text("Welcome $name",
+                  style: GoogleFonts.playfairDisplay(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  )),
               SizedBox(
                 height: 20.0,
               ),

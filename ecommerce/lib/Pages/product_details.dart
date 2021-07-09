@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:ecommerce/theme/colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProductDetailPage extends StatefulWidget {
   final String id;
@@ -33,11 +34,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         backgroundColor: Colors.grey.shade200,
         centerTitle: true,
         title: Text(
-          "Audio City",
-          style: TextStyle(
-              fontSize: 35,
-              color: Color.fromRGBO(55, 71, 166, 1),
-              fontFamily: "Samantha"),
+          "AudioCity",
+          style: GoogleFonts.rakkas(
+              fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
         ),
       ),
       body: getBody(),
