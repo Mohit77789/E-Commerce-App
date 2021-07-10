@@ -24,95 +24,102 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colors.grey.shade200,
-        centerTitle: true,
-        title: Text(
-          "AudioCity",
-          style: GoogleFonts.rakkas(
-              fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Color(0xff171F53),
+          centerTitle: true,
+          title: Text(
+            "AudioCity",
+            style: GoogleFonts.rakkas(
+                fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
+          ),
         ),
-      ),
-      // bottomNavigationBar: NavBar(),
-      body: GestureDetector(
-        onTap: () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Product())),
-        child: Container(
-          height: screenHeight,
-          width: screenWidth,
-          child: SafeArea(
-              child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                BannerWidget(),
-                Container(
-                  child: Padding(
-                    padding: EdgeInsets.all(8.0),
-                    //Downside scrolling starts here
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: <Widget>[
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
+        // bottomNavigationBar: NavBar(),
+        body: GestureDetector(
+          onTap: () => Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Product())),
+          child: Container(
+            color: Colors.white,
+            height: screenHeight,
+            width: screenWidth,
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  BannerWidget(),
+                  Container(
+                    color: Colors.white,
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      //Downside scrolling starts here
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(
+                              height: 15,
+                            ),
+
+                            //Use Less!!
+
+                            // Container(
+                            //   decoration: BoxDecoration(
+                            //     borderRadius:
+                            //         BorderRadius.all(Radius.circular(20.0)),
+                            //   ),
+                            // ),
+
+                            ClipRRect(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20.0)),
+                              child: Image.asset(
+                                "assets/images/sc1.png",
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                          ClipRRect(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20.0)),
-                            child: Image.asset(
-                              "assets/images/sc1.png",
-                              fit: BoxFit.cover,
+                            SizedBox(
+                              height: 15,
                             ),
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          ClipRRect(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20.0)),
-                            child: Image.asset(
-                              "assets/images/sc2.png",
-                              fit: BoxFit.cover,
+                            ClipRRect(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20.0)),
+                              child: Image.asset(
+                                "assets/images/sc2.png",
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          ClipRRect(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20.0)),
-                            child: Image.asset(
-                              "assets/images/sc3.png",
-                              fit: BoxFit.cover,
+                            SizedBox(
+                              height: 15,
                             ),
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          ClipRRect(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20.0)),
-                            child: Image.asset(
-                              "assets/images/sc4.png",
-                              fit: BoxFit.cover,
+                            ClipRRect(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20.0)),
+                              child: Image.asset(
+                                "assets/images/sc3.png",
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ), //
+                            SizedBox(
+                              height: 15,
+                            ),
+                            ClipRRect(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20.0)),
+                              child: Image.asset(
+                                "assets/images/sc4.png",
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ), //
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          )),
+          ),
         ),
       ),
     );
@@ -144,9 +151,9 @@ class BannerWidget extends StatelessWidget {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black,
-                        offset: Offset(2.0, 4.0),
-                        blurRadius: 5.0,
-                        spreadRadius: 1.0,
+                        offset: Offset(1.0, 0.0),
+                        blurRadius: 7.0,
+                        spreadRadius: 0.5,
                       )
                     ]),
               ),

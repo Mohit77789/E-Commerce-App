@@ -3,8 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 // import 'package:provider/provider.dart';
 
 class Cart extends StatefulWidget {
-  static const routeName = '/cart';
-
   @override
   _CartState createState() => _CartState();
 }
@@ -33,7 +31,7 @@ class _CartState extends State<Cart> {
       child: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(left: 130.0, top: 10),
+            padding: const EdgeInsets.only(left: 20.0, top: 20),
             child: AnimatedContainer(
               duration: Duration(microseconds: 500),
               height: 40,
@@ -42,13 +40,13 @@ class _CartState extends State<Cart> {
                   gradient: LinearGradient(colors: [
                     const Color(0xff303C87),
                     const Color(0xff171F53)
-                  ]),
-                  borderRadius: BorderRadius.circular(20.0),
+                  ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                  borderRadius: BorderRadius.circular(60.0),
                   boxShadow: [
                     BoxShadow(
-                        offset: Offset(5.0, 15.0),
-                        color: Color(0xff303C87),
-                        blurRadius: 10.0),
+                        offset: Offset(0.0, 0.0),
+                        color: Colors.black,
+                        blurRadius: 6.0),
                   ]),
               child: Container(
                 height: 60,
@@ -67,34 +65,6 @@ class _CartState extends State<Cart> {
           ),
           // ListView.builder(itemBuilder: itemBuilder),
         ],
-      ),
-    );
-  }
-}
-
-class CartItem extends StatelessWidget {
-  final String pid;
-  final String productid;
-  final String price;
-  final int qty;
-  final String name;
-
-  CartItem(
-    this.pid,
-    this.productid,
-    this.name,
-    this.price,
-    this.qty,
-  );
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: ListTile(
-        // leading: ,
-        title: Text(name),
-        subtitle: Text("Total:\$${(price * qty)}"),
-        trailing: Text("$qty"),
       ),
     );
   }

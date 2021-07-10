@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         changeButton = true;
       });
-      await Future.delayed(Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 280));
       await Navigator.push(
           context, MaterialPageRoute(builder: (context) => NavBar()));
       setState(() {
@@ -104,6 +104,8 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 40.0,
                     ),
+
+                    // Login Button!!
                     Material(
                       color: Colors.white,
                       borderRadius:
@@ -111,20 +113,23 @@ class _LoginPageState extends State<LoginPage> {
                       child: InkWell(
                         onTap: () => moveToHome(context),
                         child: AnimatedContainer(
-                          duration: Duration(milliseconds: 100),
+                          duration: Duration(milliseconds: 150),
                           height: 50.0,
-                          width: changeButton ? 50 : 150,
+                          width: changeButton ? 50.0 : 150,
                           decoration: BoxDecoration(
-                              gradient: LinearGradient(colors: [
-                                const Color(0xff303C87),
-                                const Color(0xff171F53)
-                              ]),
-                              borderRadius: BorderRadius.circular(20.0),
+                              gradient: LinearGradient(
+                                  colors: [
+                                    const Color(0xff303C87),
+                                    const Color(0xff171F53)
+                                  ],
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter),
+                              borderRadius: BorderRadius.circular(60.0),
                               boxShadow: [
                                 BoxShadow(
-                                    offset: Offset(5.0, 15.0),
-                                    color: Color(0xff303C87),
-                                    blurRadius: 30.0),
+                                    offset: Offset(0.0, 0.0),
+                                    color: Colors.black,
+                                    blurRadius: 6.0),
                               ]),
                           alignment: Alignment.center,
                           child: changeButton
@@ -134,9 +139,9 @@ class _LoginPageState extends State<LoginPage> {
                                 )
                               : Text(
                                   "Login",
-                                  style: TextStyle(
+                                  style: GoogleFonts.raleway(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w500,
                                     fontSize: 18,
                                   ),
                                 ),
@@ -146,6 +151,8 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 30,
                     ),
+
+                    // SignUp Button
                     SizedBox(
                       height: 50.0,
                       child: InkWell(
@@ -157,24 +164,27 @@ class _LoginPageState extends State<LoginPage> {
                           width: 150,
                           decoration: BoxDecoration(
                               gradient: LinearGradient(
-                                  // begins:Alignment.topCenter,
                                   colors: [
                                     const Color(0xff303C87),
                                     const Color(0xff171F53)
-                                  ]),
-                              borderRadius: BorderRadius.circular(20.0),
+                                  ],
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter),
+                              // begins:Alignment.topCenter,
+
+                              borderRadius: BorderRadius.circular(60.0),
                               boxShadow: [
                                 BoxShadow(
-                                    offset: Offset(5.0, 15.0),
-                                    color: Color(0xff303C87),
-                                    blurRadius: 30.0),
+                                    offset: Offset(0.0, 0.0),
+                                    color: Colors.black,
+                                    blurRadius: 6.0),
                               ]),
                           child: Center(
                             child: Text(
                               "Signup",
-                              style: TextStyle(
+                              style: GoogleFonts.raleway(
                                 color: Colors.white,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w500,
                                 fontSize: 18,
                               ),
                             ),
