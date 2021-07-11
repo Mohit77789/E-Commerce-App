@@ -90,7 +90,7 @@ class _ProductState extends State<Product> {
                                       image: DecorationImage(
                                           image: AssetImage(
                                               dataItems[index]['img']),
-                                          fit: BoxFit.cover)),
+                                          fit: BoxFit.cover),),
                                 ),
                               ),
                             ),
