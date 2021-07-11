@@ -27,7 +27,8 @@ class _ProductState extends State<Product> {
         centerTitle: true,
         title: Text(
           "AudioCity",
-          style: GoogleFonts.rakkas(fontSize: 40, color: Colors.white),
+          style: GoogleFonts.rakkas(
+              fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
         ),
       ),
       body: getBody(),
@@ -39,39 +40,6 @@ class _ProductState extends State<Product> {
     return SafeArea(
       child: ListView(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
-            child: AnimatedContainer(
-              duration: Duration(microseconds: 500),
-              height: 50,
-              width: 150,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    const Color(0xff303C87),
-                    const Color(0xff171F53)
-                  ]),
-                  borderRadius: BorderRadius.circular(20.0),
-                  boxShadow: [
-                    BoxShadow(
-                        offset: Offset(5.0, 15.0),
-                        color: Color(0xff303C87),
-                        blurRadius: 10.0),
-                  ]),
-              child: Center(
-                child: Text(
-                  "AIRDOPES",
-                  style: GoogleFonts.raleway(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 30,
-          ),
           Wrap(
             children: List.generate(dataItems.length, (index) {
               return InkWell(
@@ -97,16 +65,20 @@ class _ProductState extends State<Product> {
                         // height: 50,
                         width: (screenWidth / 2) - 32,
                         decoration: BoxDecoration(
-                            gradient: LinearGradient(colors: [
-                              const Color(0xff303C87),
-                              const Color(0xff171F53)
-                            ]),
+                            gradient: LinearGradient(
+                                colors: [
+                                  const Color(0xff171F53),
+                                  const Color(0xff303C87)
+                                ],
+                                begin: Alignment.bottomRight,
+                                end: Alignment.topLeft),
                             borderRadius: BorderRadius.circular(10.0),
                             boxShadow: [
                               BoxShadow(
-                                  offset: Offset(5.0, 15.0),
-                                  color: Color(0xff303C87),
-                                  blurRadius: 10.0),
+                                  offset: Offset(0.0, 0.0),
+                                  color: Colors.black,
+                                  blurRadius: 8,
+                                  spreadRadius: 0.5),
                             ]),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -124,7 +96,7 @@ class _ProductState extends State<Product> {
                                       image: DecorationImage(
                                           image: AssetImage(
                                               dataItems[index]['img']),
-                                          fit: BoxFit.cover)),
+                                          fit: BoxFit.cover),),
                                 ),
                               ),
                             ),
@@ -132,23 +104,27 @@ class _ProductState extends State<Product> {
                               height: 15,
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 15),
+                              padding: const EdgeInsets.all(8.0),
                               child: Text(
                                 dataItems[index]['code'],
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16),
+                                style: GoogleFonts.montserrat(
+                                    letterSpacing: 1.2,
+                                    wordSpacing: 1.5,
+                                    color: Colors.lightGreen,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 20),
                               ),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 15),
+                              padding:
+                                  const EdgeInsets.fromLTRB(8.0, 0, 8.0, 16.0),
                               child: Text(
-                                " Rs." + dataItems[index]['price'].toString(),
-                                style: TextStyle(
+                                " Rs. " + dataItems[index]['price'].toString(),
+                                style: GoogleFonts.montserrat(
+                                    letterSpacing: 1.2,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16),

@@ -50,6 +50,8 @@ class _NavBarState extends State<NavBar> {
     );
   }
 
+  //Navigation Buttons.
+
   Widget buildIconButton(IconData icon, int index) {
     return GestureDetector(
       onTap: () {
@@ -58,17 +60,21 @@ class _NavBarState extends State<NavBar> {
         });
       },
       child: Container(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          boxShadow: selectedIndex == index
-              ? [
+        decoration: index == selectedIndex
+            ? BoxDecoration(
+                shape: BoxShape.circle,
+                boxShadow: [
                   BoxShadow(
-                      color: Color(0xff171F53),
-                      blurRadius: 2.5,
-                      spreadRadius: 0)
-                ]
-              : [],
-        ),
+                      offset: Offset(0.0, 0.0),
+                      color: Colors.black,
+                      blurRadius: 6.0),
+                ],
+                gradient: LinearGradient(
+                    colors: [const Color(0xff2E3D94), const Color(0xff171F53)],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter),
+              )
+            : null,
         height: 50,
         width: 50,
         child: Icon(

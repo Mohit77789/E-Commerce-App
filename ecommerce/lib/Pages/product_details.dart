@@ -41,7 +41,8 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         centerTitle: true,
         title: Text(
           "AudioCity",
-          style: GoogleFonts.rakkas(fontSize: 40, color: Colors.white),
+          style: GoogleFonts.rakkas(
+              fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
         ),
       ),
       body: getBody(),
@@ -66,7 +67,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               child: AnimatedContainer(
                 duration: Duration(microseconds: 500),
                 height: 50,
-                width: screenWidth / 2,
+                width: screenWidth - 40,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
                       const Color(0xff303C87),
@@ -82,43 +83,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                 child: Center(
                   child: Text(
                     "ADD TO CART",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 20,
-          ),
-          SizedBox(
-            width: screenWidth / 3,
-            child: InkWell(
-              child: AnimatedContainer(
-                duration: Duration(microseconds: 500),
-                height: 50,
-                width: screenWidth / 2,
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        // begins:Alignment.topCenter,
-                        colors: [
-                          const Color(0xff303C87),
-                          const Color(0xff171F53)
-                        ]),
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: [
-                      BoxShadow(
-                          offset: Offset(5.0, 15.0),
-                          color: Color(0xff303C87),
-                          blurRadius: 30.0),
-                    ]),
-                child: Center(
-                  child: Text(
-                    "BUY NOW",
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
