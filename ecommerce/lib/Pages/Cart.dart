@@ -73,7 +73,7 @@ class _CartState extends State<Cart> {
           Padding(
             padding: EdgeInsets.all(10),
             child: SizedBox(
-              height: 200,
+              height: 450,
               child: ListView.builder(
                 itemCount: cartItems.length,
                 itemBuilder: (context, index) => Padding(
@@ -168,15 +168,15 @@ class _CartCardState extends State<CartCard> {
             SizedBox(height: 10),
             Text.rich(
               TextSpan(
-                text: "\$${widget.price}",
+                text: "\Rs ${widget.price}",
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                 ),
-                children: [
-                  TextSpan(
-                    text: " x${widget.name}",
-                  ),
-                ],
+                // children: [
+                //   TextSpan(
+                //     text: " ${widget.name}",
+                //   ),
+                // ],
               ),
             )
           ],
@@ -197,25 +197,18 @@ class CheckoutCard extends StatelessWidget {
       padding: EdgeInsets.all(10),
       // height: 174,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.grey,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
+          topLeft: Radius.circular(10),
+          topRight: Radius.circular(10),
         ),
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, -15),
-            blurRadius: 20,
-            color: Color(0xFFDADADA).withOpacity(0.15),
-          )
-        ],
       ),
       child: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
