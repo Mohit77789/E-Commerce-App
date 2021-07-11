@@ -60,16 +60,6 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(
                               height: 15,
                             ),
-
-                            //Use Less!!
-
-                            // Container(
-                            //   decoration: BoxDecoration(
-                            //     borderRadius:
-                            //         BorderRadius.all(Radius.circular(20.0)),
-                            //   ),
-                            // ),
-
                             ClipRRect(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20.0)),
