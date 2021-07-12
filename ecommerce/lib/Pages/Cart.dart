@@ -73,7 +73,7 @@ class _CartState extends State<Cart> {
           Padding(
             padding: EdgeInsets.all(10),
             child: SizedBox(
-              height: 450,
+              height: 480,
               child: ListView.builder(
                 itemCount: cartItems.length,
                 itemBuilder: (context, index) => Padding(
@@ -142,20 +142,23 @@ class _CartCardState extends State<CartCard> {
     return Row(
       children: [
         SizedBox(
-          width: 88,
+          width: 100,
           height: 100,
-          child: AspectRatio(
-            aspectRatio: 0.88,
-            child: Container(
+          
+          child: Container(
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: Color(0xFFF5F6F9),
-                borderRadius: BorderRadius.circular(15),
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(20),
               ),
-              child: Image.asset(widget.img),
-            ),
-          ),
+              child: Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(image: AssetImage(widget.img)),
+                  ))),
         ),
+        
         SizedBox(width: 20),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -172,11 +175,7 @@ class _CartCardState extends State<CartCard> {
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                 ),
-                // children: [
-                //   TextSpan(
-                //     text: " ${widget.name}",
-                //   ),
-                // ],
+              
               ),
             )
           ],
@@ -187,10 +186,7 @@ class _CartCardState extends State<CartCard> {
 }
 
 class CheckoutCard extends StatelessWidget {
-  // const CheckoutCard({
-  //   Key key,
-  // }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return Container(
