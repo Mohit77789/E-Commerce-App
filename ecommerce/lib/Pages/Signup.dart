@@ -14,7 +14,7 @@ class _SignupState extends State<Signup> {
       appBar: AppBar(
           elevation: 0,
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.white),
+          backgroundColor: Colors.white12),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 40),
@@ -43,10 +43,10 @@ class _SignupState extends State<Signup> {
               ),
               Column(
                 children: <Widget>[
-                  inputFile(label: "Username"),
-                  inputFile(label: "Email"),
-                  inputFile(label: "Password", obscureText: true),
-                  inputFile(label: "Confirm Password ", obscureText: true),
+                  inputData(label: "Username"),
+                  inputData(label: "Email"),
+                  inputData(label: "Password", obscureText: true),
+                  inputData(label: "Confirm Password ", obscureText: true),
                 ],
               ),
               Container(
@@ -116,7 +116,7 @@ class _SignupState extends State<Signup> {
 }
 
 // we will be creating a widget for text field
-Widget inputFile({label, obscureText = false}) {
+Widget inputData({label, obscureText = false}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[

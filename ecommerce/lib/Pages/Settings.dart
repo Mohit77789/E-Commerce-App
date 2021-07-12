@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Settings extends StatefulWidget {
-  const Settings({Key? key}) : super(key: key);
+  // const Settings({Key? key}) : super(key: key);
 
   @override
   _SettingsState createState() => _SettingsState();
