@@ -11,7 +11,6 @@ class Cart extends StatefulWidget {
 class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
-    // final cart = Provider.of<Cart>(context);
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
@@ -35,36 +34,34 @@ class _CartState extends State<Cart> {
   }
 
   Widget getBody() {
+    var screenWidth = MediaQuery.of(context).size.width;
     return Container(
       child: Column(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0, top: 20),
+          Container(
+            height: 40,
+            width: screenWidth,
+            color: Colors.grey,
+            // decoration: BoxDecoration(
+            //     gradient: LinearGradient(colors: [
+            //       const Color(0xff303C87),
+            //       const Color(0xff171F53)
+            //     ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+            //     borderRadius: BorderRadius.circular(60.0),
+            //     boxShadow: [
+            //       BoxShadow(
+            //           offset: Offset(0.0, 0.0),
+            //           color: Colors.black,
+            //           blurRadius: 6.0),
+            //     ]),
             child: Container(
-              height: 40,
-              width: 150,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    const Color(0xff303C87),
-                    const Color(0xff171F53)
-                  ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-                  borderRadius: BorderRadius.circular(60.0),
-                  boxShadow: [
-                    BoxShadow(
-                        offset: Offset(0.0, 0.0),
-                        color: Colors.black,
-                        blurRadius: 6.0),
-                  ]),
-              child: Container(
-                height: 60,
-                child: Center(
-                  child: Text(
-                    "Shopping Cart",
-                    style: GoogleFonts.raleway(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 18,
-                    ),
+              child: Center(
+                child: Text(
+                  "Shopping Cart",
+                  style: GoogleFonts.raleway(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
                   ),
                 ),
               ),
@@ -144,7 +141,6 @@ class _CartCardState extends State<CartCard> {
         SizedBox(
           width: 100,
           height: 100,
-          
           child: Container(
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -158,7 +154,6 @@ class _CartCardState extends State<CartCard> {
                     image: DecorationImage(image: AssetImage(widget.img)),
                   ))),
         ),
-        
         SizedBox(width: 20),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -175,7 +170,6 @@ class _CartCardState extends State<CartCard> {
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                 ),
-              
               ),
             )
           ],
@@ -186,7 +180,6 @@ class _CartCardState extends State<CartCard> {
 }
 
 class CheckoutCard extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return Container(
