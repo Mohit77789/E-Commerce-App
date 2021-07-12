@@ -42,18 +42,7 @@ class _CartState extends State<Cart> {
             height: 40,
             width: screenWidth,
             color: Colors.grey,
-            // decoration: BoxDecoration(
-            //     gradient: LinearGradient(colors: [
-            //       const Color(0xff303C87),
-            //       const Color(0xff171F53)
-            //     ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-            //     borderRadius: BorderRadius.circular(60.0),
-            //     boxShadow: [
-            //       BoxShadow(
-            //           offset: Offset(0.0, 0.0),
-            //           color: Colors.black,
-            //           blurRadius: 6.0),
-            //     ]),
+           
             child: Container(
               child: Center(
                 child: Text(

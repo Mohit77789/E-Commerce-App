@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.black),
+          iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Color(0xff171F53),
           centerTitle: true,
           title: Text(
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                               height: 15,
                             ),
                             ClipRRect(
-                 borderRadius:
+                              borderRadius:
                                   BorderRadius.all(Radius.circular(20.0)),
                               child: Image.asset(
                                 "assets/images/sc1.png",
