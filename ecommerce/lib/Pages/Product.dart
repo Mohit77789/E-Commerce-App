@@ -14,24 +14,29 @@ class _ProductState extends State<Product> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [const Color(0xff1B2150), const Color(0xff303C87)]),
+    return Container(
+      color: Colors.white,
+      child: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            flexibleSpace: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    colors: [const Color(0xff1B2150), const Color(0xff303C87)]),
+              ),
+            ),
+            iconTheme: IconThemeData(color: Colors.white),
+            backgroundColor: Colors.grey.shade200,
+            centerTitle: true,
+            title: Text(
+              "AudioCity",
+              style: GoogleFonts.rakkas(
+                  fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
+            ),
           ),
-        ),
-        iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: Colors.grey.shade200,
-        centerTitle: true,
-        title: Text(
-          "AudioCity",
-          style: GoogleFonts.rakkas(
-              fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
+          body: getBody(),
         ),
       ),
-      body: getBody(),
     );
   }
 
@@ -91,12 +96,13 @@ class _ProductState extends State<Product> {
                                   width: 150,
                                   height: 150,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(20.0)),
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              dataItems[index]['img']),
-                                          fit: BoxFit.cover),),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(20.0)),
+                                    image: DecorationImage(
+                                        image:
+                                            AssetImage(dataItems[index]['img']),
+                                        fit: BoxFit.cover),
+                                  ),
                                 ),
                               ),
                             ),

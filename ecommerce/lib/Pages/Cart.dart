@@ -11,25 +11,27 @@ class Cart extends StatefulWidget {
 class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [const Color(0xff1B2150), const Color(0xff303C87)]),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [const Color(0xff1B2150), const Color(0xff303C87)]),
+            ),
+          ),
+          iconTheme: IconThemeData(color: Colors.white),
+          backgroundColor: Colors.grey.shade200,
+          centerTitle: true,
+          title: Text(
+            "AudioCity",
+            style: GoogleFonts.rakkas(
+                fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
           ),
         ),
-        iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: Colors.grey.shade200,
-        centerTitle: true,
-        title: Text(
-          "AudioCity",
-          style: GoogleFonts.rakkas(
-              fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
-        ),
+        body: getBody(),
+        bottomNavigationBar: CheckoutCard(),
       ),
-      body: getBody(),
-      bottomNavigationBar: CheckoutCard(),
     );
   }
 
@@ -42,7 +44,6 @@ class _CartState extends State<Cart> {
             height: 40,
             width: screenWidth,
             color: Colors.grey,
-           
             child: Container(
               child: Center(
                 child: Text(

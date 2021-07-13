@@ -1,8 +1,8 @@
 // import 'package:ecommerce/Pages/Cart.dart';
 import 'package:flutter/material.dart';
 
-import 'package:ecommerce/theme/colors.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:ecommerce/theme/colors.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 class ProductDetailPage extends StatefulWidget {
   final String id;
@@ -24,29 +24,34 @@ class ProductDetailPage extends StatefulWidget {
 }
 
 class _ProductDetailPageState extends State<ProductDetailPage> {
-  int qty = 1;
-  @override
+  int qty = 10;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [const Color(0xff1B2150), const Color(0xff303C87)]),
-          ),
-        ),
-        iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: Colors.grey.shade200,
-        centerTitle: true,
-        title: Text(
-          "AudioCity",
-          style: GoogleFonts.rakkas(
-              fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
+    return Container(
+      color: Colors.white,
+      child: SafeArea(
+        child: Scaffold(
+          //   appBar: AppBar(
+          //     flexibleSpace: Container(
+          //       decoration: BoxDecoration(
+          //         gradient: LinearGradient(
+          //             colors: [const Color(0xff1B2150), const Color(0xff303C87)]),
+          //       ),
+          //     ),
+          //     iconTheme: IconThemeData(color: Colors.white),
+          //     backgroundColor: Colors.grey.shade200,
+          //     centerTitle: true,
+          //     title: Text(
+          //       "AudioCity",
+          //       style: GoogleFonts.rakkas(
+          //           fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
+          //     ),
+          //   ),
+          body: getBody(),
+          bottomSheet: getBottom(),
         ),
       ),
-      body: getBody(),
-      bottomSheet: getBottom(),
     );
   }
 
@@ -72,13 +77,13 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     gradient: LinearGradient(colors: [
                       const Color(0xff303C87),
                       const Color(0xff171F53)
-                    ]),
+                    ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
                     borderRadius: BorderRadius.circular(20.0),
                     boxShadow: [
                       BoxShadow(
-                          offset: Offset(5.0, 15.0),
-                          color: Color(0xff303C87),
-                          blurRadius: 30.0),
+                          offset: Offset(0.0, 0.0),
+                          color: Colors.black,
+                          blurRadius: 6.0),
                     ]),
                 child: Center(
                   child: Text(
@@ -99,164 +104,355 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   }
 
   Widget getBody() {
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 60),
-        child: ListView(
-          children: <Widget>[
-            SizedBox(
-              height: 10,
-            ),
-            Card(
-              elevation: 2,
-              child: Hero(
-                tag: widget.id.toString(),
-                child: AnimatedContainer(
-                  duration: Duration(microseconds: 500),
-                  height: 400,
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                        const Color(0xff303C87),
-                        const Color(0xff171F53)
-                      ]),
-                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                      image: DecorationImage(
-                          image: AssetImage(widget.img), fit: BoxFit.cover),
-                      boxShadow: [
-                        BoxShadow(
-                            offset: Offset(5.0, 15.0),
-                            color: Color(0xff303C87),
-                            blurRadius: 10.0),
-                      ]),
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
+
+    return Container(
+      height: screenHeight,
+      child: Column(
+        children: [
+          Hero(
+            tag: widget.id.toString(),
+            child: Container(
+              alignment: Alignment.topCenter,
+              padding: EdgeInsets.only(top: 50),
+              height: screenHeight / 1.7,
+              width: screenWidth,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(widget.img), fit: BoxFit.cover)),
+              child: Padding(
+                padding: EdgeInsets.only(left: 25, right: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      flex: 3,
+                      fit: FlexFit.loose,
+                      child: RawMaterialButton(
+                        elevation: 2,
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        constraints: BoxConstraints(minWidth: 10, maxWidth: 50),
+                        child: Icon(Icons.chevron_left,
+                            color: Colors.black, size: 30),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        fillColor: Colors.white60,
+                        padding:
+                            EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      ),
+                    ),
+                    // Expanded(
+                    //   flex: 3,
+                    //   child: Center(
+                    //     child: Text('Detail',
+                    //         style: TextStyle(
+                    //           fontWeight: FontWeight.w700,
+                    //           fontSize: 22,
+                    //         )),
+                    //   ),
+                    // ),
+                    Flexible(
+                      flex: 3,
+                      fit: FlexFit.loose,
+                      child: RawMaterialButton(
+                        elevation: 2,
+                        onPressed: () {},
+                        constraints: BoxConstraints(
+                          minWidth: 10,
+                        ),
+                        child: Icon(Icons.favorite_border,
+                            color: Colors.black, size: 30),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        fillColor: Colors.white60,
+                        padding:
+                            EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Row(
+          ),
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 25.0),
+              transform: Matrix4.translationValues(0, -30, 0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+                color: Colors.grey,
+              ),
+              width: screenWidth,
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    "Name :",
-                    style: TextStyle(fontSize: 22, height: 1.5),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Flexible(
-                    child: Text(
-                      widget.name,
-                      style: TextStyle(fontSize: 25, height: 1.5),
+                children: [
+                  Center(
+                    child: Container(
+                      width: 50.0,
+                      height: 6.0,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20)),
                     ),
                   ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
+                  SizedBox(
+                    height: screenHeight / 100 * 3.5,
+                  ),
                   Text(
-                    "Price :",
-                    style: TextStyle(fontSize: 22, height: 1.5),
+                    widget.name,
+                    style: TextStyle(
+                        fontSize: 26,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700),
                   ),
                   SizedBox(
-                    width: 20,
+                    height: screenHeight / 100 * 2.5,
                   ),
-                  Flexible(
-                    child: Text(
-                      "Rs. " + widget.price,
-                      style: TextStyle(fontSize: 25, height: 1.5),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    "Qty :",
-                    style: TextStyle(fontSize: 22, height: 1.5),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Flexible(
-                      child: Row(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      InkWell(
-                        onTap: () {
-                          if (qty > 1) {
-                            setState(() {
-                              qty = --qty;
-                            });
-                          }
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10.0)),
-                              border:
-                                  Border.all(color: black.withOpacity(0.5))),
-                          width: 25,
-                          height: 25,
-                          child: Icon(
-                            Icons.remove,
-                            color: black.withOpacity(0.5),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
                       Text(
-                        qty.toString(),
-                        style: TextStyle(fontSize: 25),
+                        "Rs" + widget.price,
+                        style: TextStyle(
+                          fontSize: 32,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                       SizedBox(
-                        width: 15,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            qty = ++qty;
-                          });
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10.0)),
-                              border:
-                                  Border.all(color: black.withOpacity(0.5))),
-                          width: 25,
-                          height: 25,
-                          child: Icon(
-                            Icons.add,
-                            color: black.withOpacity(0.5),
-                          ),
+                        child: Row(
+                          children: [
+                            RawMaterialButton(
+                              constraints: BoxConstraints(minWidth: 0),
+                              onPressed: () => {
+                                if (qty > 1)
+                                  {
+                                    setState(() {
+                                      qty = --qty;
+                                    })
+                                  }
+                              },
+                              elevation: 0,
+                              child: Icon(
+                                Icons.remove,
+                                color: Colors.grey,
+                                size: 20,
+                              ),
+                              fillColor: Colors.grey[200],
+                              padding: EdgeInsets.all(5.0),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)),
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Text(qty.toString(),
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w700,
+                                )),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            RawMaterialButton(
+                              constraints: BoxConstraints(minWidth: 0),
+                              elevation: 0,
+                              onPressed: () => {
+                                setState(() {
+                                  qty = ++qty;
+                                })
+                              },
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.grey,
+                                size: 20,
+                              ),
+                              fillColor: Colors.grey[200],
+                              padding: EdgeInsets.all(5.0),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)),
+                            ),
+                          ],
                         ),
-                      )
+                      ),
                     ],
-                  )),
+                  ),
+                  SizedBox(
+                    height: screenHeight / 100 * 2,
+                  ),
+                  Text(widget.code,
+                      style: TextStyle(
+                        fontSize: 17,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                      )),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
+
+    // SafeArea(
+    //   child: Padding(
+    //     padding: const EdgeInsets.only(bottom: 60),
+    //     child: ListView(
+    //       children: <Widget>[
+    //         SizedBox(
+    //           height: 10,
+    //         ),
+    //         Card(
+    //           elevation: 2,
+    //           child: Hero(
+    //             tag: widget.id.toString(),
+    //             child: Container(
+
+    //               height: 400,
+    //               decoration: BoxDecoration(
+
+    //                   borderRadius: BorderRadius.all(Radius.circular(20.0)),
+    //                   image: DecorationImage(
+    //                       image: AssetImage(widget.img), fit: BoxFit.cover),
+    //                  ),
+    //             ),
+    //           ),
+    //         ),
+    //         SizedBox(
+    //           height: 20,
+    //         ),
+    //         Padding(
+    //           padding: const EdgeInsets.only(left: 20, right: 20),
+    //           child: Row(
+    //             crossAxisAlignment: CrossAxisAlignment.start,
+    //             children: <Widget>[
+    //               Text(
+    //                 "Name :",
+    //                 style: TextStyle(fontSize: 22, height: 1.5),
+    //               ),
+    //               SizedBox(
+    //                 width: 20,
+    //               ),
+    //               Flexible(
+    //                 child: Text(
+    //                   widget.name,
+    //                   style: TextStyle(fontSize: 25, height: 1.5),
+    //                 ),
+    //               ),
+    //             ],
+    //           ),
+    //         ),
+    //         SizedBox(
+    //           height: 20,
+    //         ),
+    //         Padding(
+    //           padding: const EdgeInsets.only(left: 20, right: 20),
+    //           child: Row(
+    //             crossAxisAlignment: CrossAxisAlignment.start,
+    //             children: <Widget>[
+    //               Text(
+    //                 "Price :",
+    //                 style: TextStyle(fontSize: 22, height: 1.5),
+    //               ),
+    //               SizedBox(
+    //                 width: 20,
+    //               ),
+    //               Flexible(
+    //                 child: Text(
+    //                   "Rs. " + widget.price,
+    //                   style: TextStyle(fontSize: 25, height: 1.5),
+    //                 ),
+    //               ),
+    //             ],
+    //           ),
+    //         ),
+    //         SizedBox(
+    //           height: 20,
+    //         ),
+    //         Padding(
+    //           padding: const EdgeInsets.only(left: 20, right: 20),
+    //           child: Row(
+    //             crossAxisAlignment: CrossAxisAlignment.start,
+    //             children: <Widget>[
+    //               Text(
+    //                 "Qty :",
+    //                 style: TextStyle(fontSize: 22, height: 1.5),
+    //               ),
+    //               SizedBox(
+    //                 width: 20,
+    //               ),
+    //               Flexible(
+    //                   child: Row(
+    //                 children: <Widget>[
+    //                   InkWell(
+    //                     onTap: () {
+    //                       if (qty > 1) {
+    //                         setState(() {
+    //                           qty = --qty;
+    //                         });
+    //                       }
+    //                     },
+    //                     child: Container(
+    //                       decoration: BoxDecoration(
+    //                           borderRadius:
+    //                               BorderRadius.all(Radius.circular(10.0)),
+    //                           border:
+    //                               Border.all(color: black.withOpacity(0.5))),
+    //                       width: 25,
+    //                       height: 25,
+    //                       child: Icon(
+    //                         Icons.remove,
+    //                         color: black.withOpacity(0.5),
+    //                       ),
+    //                     ),
+    //                   ),
+    //                   SizedBox(
+    //                     width: 15,
+    //                   ),
+    //                   Text(
+    //                     qty.toString(),
+    //                     style: TextStyle(fontSize: 25),
+    //                   ),
+    //                   SizedBox(
+    //                     width: 15,
+    //                   ),
+    //                   InkWell(
+    //                     onTap: () {
+    //                       setState(() {
+    //                         qty = ++qty;
+    //                       });
+    //                     },
+    //                     child: Container(
+    //                       decoration: BoxDecoration(
+    //                           borderRadius:
+    //                               BorderRadius.all(Radius.circular(10.0)),
+    //                           border:
+    //                               Border.all(color: black.withOpacity(0.5))),
+    //                       width: 25,
+    //                       height: 25,
+    //                       child: Icon(
+    //                         Icons.add,
+    //                         color: black.withOpacity(0.5),
+    //                       ),
+    //                     ),
+    //                   )
+    //                 ],
+    //               )),
+    //             ],
+    //           ),
+    //         ),
+    //       ],
+    //     ),
+    //   ),
+    // );
   }
 }
