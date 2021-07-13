@@ -17,7 +17,7 @@ class ConfirmationSlider extends StatefulWidget {
   const ConfirmationSlider(
       {Key? key,
       this.height = 90,
-      this.width = 410,
+      this.width = 390,
       required this.backgroundColor,
       required this.backgroundColorEnd,
       required this.foregroundColor,
@@ -97,7 +97,7 @@ class ConfirmationSliderState extends State<ConfirmationSlider> {
     style = widget.textStyle;
 
     return Padding(
-      padding: const EdgeInsets.only(top: 660, bottom: 60),
+      padding: const EdgeInsets.only(top: 660, bottom: 60, left: 10, right: 10),
       child: AnimatedContainer(
         duration: Duration(milliseconds: _duration),
         curve: Curves.ease,
