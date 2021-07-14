@@ -1,12 +1,12 @@
 import 'package:ecommerce/Pages/Product.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:ecommerce/widgets/navigation.dart';
+
 import 'package:flutter/material.dart';
 
 var bannerImages = [
   "assets/images/Home2.png",
   "assets/images/Home1.png",
-  "assets/images/Home3.png",
+  "assets/images/Home3.jpg",
   "assets/images/Home4.png",
   "assets/images/Home5.png",
   "assets/images/one.png"
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                 fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
           ),
         ),
-        // bottomNavigationBar: NavBar(),
+      
         body: GestureDetector(
           onTap: () => Navigator.push(
               context, MaterialPageRoute(builder: (context) => Product())),

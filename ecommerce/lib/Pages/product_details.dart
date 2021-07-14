@@ -24,7 +24,7 @@ class ProductDetailPage extends StatefulWidget {
 }
 
 class _ProductDetailPageState extends State<ProductDetailPage> {
-  int qty = 10;
+  int qty = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -32,22 +32,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
       color: Colors.white,
       child: SafeArea(
         child: Scaffold(
-          //   appBar: AppBar(
-          //     flexibleSpace: Container(
-          //       decoration: BoxDecoration(
-          //         gradient: LinearGradient(
-          //             colors: [const Color(0xff1B2150), const Color(0xff303C87)]),
-          //       ),
-          //     ),
-          //     iconTheme: IconThemeData(color: Colors.white),
-          //     backgroundColor: Colors.grey.shade200,
-          //     centerTitle: true,
-          //     title: Text(
-          //       "AudioCity",
-          //       style: GoogleFonts.rakkas(
-          //           fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
-          //     ),
-          //   ),
           body: getBody(),
           bottomSheet: getBottom(),
         ),
@@ -60,6 +44,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
     var screenWidth = MediaQuery.of(context).size.width;
     return Container(
       height: 80,
+      color: Colors.grey,
       width: size.width,
       child: Row(
         children: <Widget>[
@@ -116,7 +101,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             child: Container(
               alignment: Alignment.topCenter,
               padding: EdgeInsets.only(top: 50),
-              height: screenHeight / 1.7,
+              height: screenHeight / 2,
               width: screenWidth,
               decoration: BoxDecoration(
                   image: DecorationImage(

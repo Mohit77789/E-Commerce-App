@@ -1,4 +1,4 @@
-import 'package:ecommerce/Pages/LoginPage.dart';
+import 'package:ecommerce/Pages/Splashone.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/widgets/slider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -50,7 +50,7 @@ class _SplashPageState extends State<SplashPage> {
               backgroundShape: BorderRadius.circular(15),
               onConfirmation: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LoginPage()));
+                    MaterialPageRoute(builder: (context) => SplashOne()));
               },
             ),
           ],

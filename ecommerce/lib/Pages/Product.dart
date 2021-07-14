@@ -18,22 +18,6 @@ class _ProductState extends State<Product> {
       color: Colors.white,
       child: SafeArea(
         child: Scaffold(
-          appBar: AppBar(
-            flexibleSpace: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [const Color(0xff1B2150), const Color(0xff303C87)]),
-              ),
-            ),
-            iconTheme: IconThemeData(color: Colors.white),
-            backgroundColor: Colors.grey.shade200,
-            centerTitle: true,
-            title: Text(
-              "AudioCity",
-              style: GoogleFonts.rakkas(
-                  fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
-            ),
-          ),
           body: getBody(),
         ),
       ),
@@ -65,26 +49,8 @@ class _ProductState extends State<Product> {
                   padding: const EdgeInsets.all(12),
                   child: Card(
                       elevation: 2,
-                      child: AnimatedContainer(
-                        duration: Duration(microseconds: 500),
-                        // height: 50,
+                      child: Container(
                         width: (screenWidth / 2) - 32,
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                                colors: [
-                                  const Color(0xff171F53),
-                                  const Color(0xff303C87)
-                                ],
-                                begin: Alignment.bottomRight,
-                                end: Alignment.topLeft),
-                            borderRadius: BorderRadius.circular(10.0),
-                            boxShadow: [
-                              BoxShadow(
-                                  offset: Offset(0.0, 0.0),
-                                  color: Colors.black,
-                                  blurRadius: 8,
-                                  spreadRadius: 0.5),
-                            ]),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
@@ -112,7 +78,7 @@ class _ProductState extends State<Product> {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
-                                dataItems[index]['code'],
+                                dataItems[index]['name'],
                                 style: GoogleFonts.montserrat(
                                     letterSpacing: 1.2,
                                     wordSpacing: 1.5,
@@ -131,7 +97,7 @@ class _ProductState extends State<Product> {
                                 " Rs. " + dataItems[index]['price'].toString(),
                                 style: GoogleFonts.montserrat(
                                     letterSpacing: 1.2,
-                                    color: Colors.white,
+                                    color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16),
                               ),
