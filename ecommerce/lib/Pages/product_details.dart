@@ -1,4 +1,3 @@
-// import 'package:ecommerce/Pages/Cart.dart';
 import 'package:flutter/material.dart';
 
 // import 'package:ecommerce/theme/colors.dart';
@@ -40,6 +39,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   }
 
   Widget getBottom() {
+    // final cart = Provider.of<Cart>(context);
     var size = MediaQuery.of(context).size;
     var screenWidth = MediaQuery.of(context).size.width;
     return Container(
@@ -52,7 +52,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             padding: const EdgeInsets.only(left: 20.0),
             child: InkWell(
               onTap: () {
-                //  Cart.addItem(widget.id,widget.name,widget.price);
+                // cart.addItem(widget.id, widget.name, widget.price);
               },
               child: AnimatedContainer(
                 duration: Duration(microseconds: 500),
@@ -287,157 +287,5 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         ],
       ),
     );
-
-    // SafeArea(
-    //   child: Padding(
-    //     padding: const EdgeInsets.only(bottom: 60),
-    //     child: ListView(
-    //       children: <Widget>[
-    //         SizedBox(
-    //           height: 10,
-    //         ),
-    //         Card(
-    //           elevation: 2,
-    //           child: Hero(
-    //             tag: widget.id.toString(),
-    //             child: Container(
-
-    //               height: 400,
-    //               decoration: BoxDecoration(
-
-    //                   borderRadius: BorderRadius.all(Radius.circular(20.0)),
-    //                   image: DecorationImage(
-    //                       image: AssetImage(widget.img), fit: BoxFit.cover),
-    //                  ),
-    //             ),
-    //           ),
-    //         ),
-    //         SizedBox(
-    //           height: 20,
-    //         ),
-    //         Padding(
-    //           padding: const EdgeInsets.only(left: 20, right: 20),
-    //           child: Row(
-    //             crossAxisAlignment: CrossAxisAlignment.start,
-    //             children: <Widget>[
-    //               Text(
-    //                 "Name :",
-    //                 style: TextStyle(fontSize: 22, height: 1.5),
-    //               ),
-    //               SizedBox(
-    //                 width: 20,
-    //               ),
-    //               Flexible(
-    //                 child: Text(
-    //                   widget.name,
-    //                   style: TextStyle(fontSize: 25, height: 1.5),
-    //                 ),
-    //               ),
-    //             ],
-    //           ),
-    //         ),
-    //         SizedBox(
-    //           height: 20,
-    //         ),
-    //         Padding(
-    //           padding: const EdgeInsets.only(left: 20, right: 20),
-    //           child: Row(
-    //             crossAxisAlignment: CrossAxisAlignment.start,
-    //             children: <Widget>[
-    //               Text(
-    //                 "Price :",
-    //                 style: TextStyle(fontSize: 22, height: 1.5),
-    //               ),
-    //               SizedBox(
-    //                 width: 20,
-    //               ),
-    //               Flexible(
-    //                 child: Text(
-    //                   "Rs. " + widget.price,
-    //                   style: TextStyle(fontSize: 25, height: 1.5),
-    //                 ),
-    //               ),
-    //             ],
-    //           ),
-    //         ),
-    //         SizedBox(
-    //           height: 20,
-    //         ),
-    //         Padding(
-    //           padding: const EdgeInsets.only(left: 20, right: 20),
-    //           child: Row(
-    //             crossAxisAlignment: CrossAxisAlignment.start,
-    //             children: <Widget>[
-    //               Text(
-    //                 "Qty :",
-    //                 style: TextStyle(fontSize: 22, height: 1.5),
-    //               ),
-    //               SizedBox(
-    //                 width: 20,
-    //               ),
-    //               Flexible(
-    //                   child: Row(
-    //                 children: <Widget>[
-    //                   InkWell(
-    //                     onTap: () {
-    //                       if (qty > 1) {
-    //                         setState(() {
-    //                           qty = --qty;
-    //                         });
-    //                       }
-    //                     },
-    //                     child: Container(
-    //                       decoration: BoxDecoration(
-    //                           borderRadius:
-    //                               BorderRadius.all(Radius.circular(10.0)),
-    //                           border:
-    //                               Border.all(color: black.withOpacity(0.5))),
-    //                       width: 25,
-    //                       height: 25,
-    //                       child: Icon(
-    //                         Icons.remove,
-    //                         color: black.withOpacity(0.5),
-    //                       ),
-    //                     ),
-    //                   ),
-    //                   SizedBox(
-    //                     width: 15,
-    //                   ),
-    //                   Text(
-    //                     qty.toString(),
-    //                     style: TextStyle(fontSize: 25),
-    //                   ),
-    //                   SizedBox(
-    //                     width: 15,
-    //                   ),
-    //                   InkWell(
-    //                     onTap: () {
-    //                       setState(() {
-    //                         qty = ++qty;
-    //                       });
-    //                     },
-    //                     child: Container(
-    //                       decoration: BoxDecoration(
-    //                           borderRadius:
-    //                               BorderRadius.all(Radius.circular(10.0)),
-    //                           border:
-    //                               Border.all(color: black.withOpacity(0.5))),
-    //                       width: 25,
-    //                       height: 25,
-    //                       child: Icon(
-    //                         Icons.add,
-    //                         color: black.withOpacity(0.5),
-    //                       ),
-    //                     ),
-    //                   )
-    //                 ],
-    //               )),
-    //             ],
-    //           ),
-    //         ),
-    //       ],
-    //     ),
-    //   ),
-    // );
   }
 }

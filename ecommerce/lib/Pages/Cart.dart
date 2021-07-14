@@ -13,54 +13,43 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [const Color(0xff1B2150), const Color(0xff303C87)]),
-            ),
-          ),
-          iconTheme: IconThemeData(color: Colors.white),
-          backgroundColor: Colors.grey.shade200,
-          centerTitle: true,
-          title: Text(
-            "AudioCity",
-            style: GoogleFonts.rakkas(
-                fontSize: 40, color: Color.fromRGBO(55, 71, 166, 1)),
-          ),
-        ),
+        appBar: buildAppBar(context),
         body: getBody(),
         bottomNavigationBar: CheckoutCard(),
       ),
     );
   }
 
+  AppBar buildAppBar(BuildContext context) {
+    return AppBar(
+      iconTheme: IconThemeData(color: Colors.black),
+      backgroundColor: Colors.white,
+      centerTitle: true,
+      title: Column(
+        children: [
+          Text(
+            "Your Cart",
+            style: GoogleFonts.raleway(fontSize: 30, color: Colors.black),
+          ),
+          Text(
+            "${cartItems.length} items",
+            style: GoogleFonts.raleway(fontSize: 15, color: Colors.black),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget getBody() {
-    var screenWidth = MediaQuery.of(context).size.width;
+    var screenHeight = MediaQuery.of(context).size.height;
     return Container(
+      color: Colors.white,
       child: Column(
         children: <Widget>[
-          Container(
-            height: 40,
-            width: screenWidth,
-            color: Colors.grey,
-            child: Container(
-              child: Center(
-                child: Text(
-                  "Shopping Cart",
-                  style: GoogleFonts.raleway(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-            ),
-          ),
           Padding(
             padding: EdgeInsets.all(10),
             child: SizedBox(
-              height: 480,
+              height: screenHeight - 276,
               child: ListView.builder(
                 itemCount: cartItems.length,
                 itemBuilder: (context, index) => Padding(
@@ -134,7 +123,7 @@ class _CartCardState extends State<CartCard> {
           child: Container(
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: Colors.grey,
+                color: Colors.white10,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Container(
@@ -150,14 +139,15 @@ class _CartCardState extends State<CartCard> {
           children: [
             Text(
               widget.name,
-              style: TextStyle(color: Colors.black, fontSize: 16),
+              style: GoogleFonts.raleway(color: Colors.black, fontSize: 20),
               maxLines: 2,
             ),
             SizedBox(height: 10),
             Text.rich(
               TextSpan(
                 text: "\Rs ${widget.price}",
-                style: TextStyle(
+                style: GoogleFonts.raleway(
+                  fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -172,11 +162,15 @@ class _CartCardState extends State<CartCard> {
 class CheckoutCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    int total = 0;
+    for (int i = 0; i < cartItems.length; i++) {
+      total = total + int.parse(cartItems[i].price);
+    }
     return Container(
       padding: EdgeInsets.all(10),
       // height: 174,
       decoration: BoxDecoration(
-        color: Colors.grey,
+        color: Colors.white24,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(10),
           topRight: Radius.circular(10),
@@ -194,10 +188,13 @@ class CheckoutCard extends StatelessWidget {
                 Text.rich(
                   TextSpan(
                     text: "Total:\n",
+                    style:
+                        GoogleFonts.raleway(fontSize: 20, color: Colors.black),
                     children: [
                       TextSpan(
-                        text: "\Rs3370.00",
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        text: "\Rs " + total.toString(),
+                        style: GoogleFonts.raleway(
+                            fontSize: 20, color: Colors.black),
                       ),
                     ],
                   ),
@@ -205,7 +202,7 @@ class CheckoutCard extends StatelessWidget {
                 SizedBox(
                   width: 190,
                   child: Container(
-                    height: 40,
+                    height: 60,
                     width: 150,
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -226,11 +223,11 @@ class CheckoutCard extends StatelessWidget {
                       height: 60,
                       child: Center(
                         child: Text(
-                          "Ckeck Out",
+                          "Check Out",
                           style: GoogleFonts.raleway(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 18,
+                            fontSize: 22,
                           ),
                         ),
                       ),

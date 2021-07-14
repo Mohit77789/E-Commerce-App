@@ -104,6 +104,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_cart:
+    dependency: "direct main"
+    description:
+      name: flutter_cart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.6"
   flutter_icons:
     dependency: "direct main"
     description:
@@ -368,4 +375,4 @@ packages:
     version: "3.1.0"
 sdks:
   dart: ">=2.13.0 <3.0.0"
-  flutter: ">=1.20.0"
+  flutter: ">=2.2.0"
