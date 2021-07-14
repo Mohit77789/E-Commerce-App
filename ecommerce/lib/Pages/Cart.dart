@@ -43,7 +43,7 @@ class _CartState extends State<Cart> {
   Widget getBody() {
     var screenHeight = MediaQuery.of(context).size.height;
     return Container(
-      color: Colors.white,
+      color: Colors.white24,
       child: Column(
         children: <Widget>[
           Padding(
@@ -115,46 +115,52 @@ class CartCard extends StatefulWidget {
 class _CartCardState extends State<CartCard> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(
-          width: 100,
-          height: 100,
-          child: Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Colors.white10,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(image: AssetImage(widget.img)),
-                  ))),
-        ),
-        SizedBox(width: 20),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              widget.name,
-              style: GoogleFonts.raleway(color: Colors.black, fontSize: 20),
-              maxLines: 2,
-            ),
-            SizedBox(height: 10),
-            Text.rich(
-              TextSpan(
-                text: "\Rs ${widget.price}",
-                style: GoogleFonts.raleway(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Row(
+        children: [
+          SizedBox(
+            width: 100,
+            height: 100,
+            child: Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
                 ),
+                child: Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(image: AssetImage(widget.img)),
+                    ))),
+          ),
+          SizedBox(width: 20),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                widget.name,
+                style: GoogleFonts.raleway(color: Colors.black, fontSize: 20),
+                maxLines: 2,
               ),
-            )
-          ],
-        )
-      ],
+              SizedBox(height: 10),
+              Text.rich(
+                TextSpan(
+                  text: "\Rs ${widget.price}",
+                  style: GoogleFonts.raleway(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 }

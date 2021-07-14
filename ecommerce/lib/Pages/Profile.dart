@@ -98,6 +98,12 @@ class _ProfileState extends State<Profile> {
                         height: 40,
                         width: 120,
                         decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(0.0, 0.0),
+                                color: Colors.black,
+                                blurRadius: 6.0),
+                          ],
                           color: Colors.grey,
                           borderRadius: BorderRadius.circular(20.0),
                         ),
@@ -126,9 +132,9 @@ class _ProfileState extends State<Profile> {
                             borderRadius: BorderRadius.circular(20.0),
                             boxShadow: [
                               BoxShadow(
-                                  offset: Offset(5.0, 15.0),
-                                  color: Color(0xff303C87),
-                                  blurRadius: 30.0),
+                                  offset: Offset(0.0, 0.0),
+                                  color: Colors.black,
+                                  blurRadius: 6.0),
                             ]),
                         child: Center(
                           child: Text(

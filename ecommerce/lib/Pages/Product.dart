@@ -4,7 +4,6 @@ import 'package:ecommerce/Pages/product_details.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Product extends StatefulWidget {
-//  const Product({Key? key}) : super(key: key);
   @override
   _ProductState createState() => _ProductState();
 }
@@ -18,6 +17,22 @@ class _ProductState extends State<Product> {
       color: Colors.white,
       child: SafeArea(
         child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            automaticallyImplyLeading: false,
+            leading: Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: IconButton(
+                  onPressed: () => Navigator.pop(context),
+                  icon:
+                      Icon(Icons.chevron_left, color: Colors.black, size: 30)),
+            ),
+            centerTitle: true,
+            title: Text(
+              "Store",
+              style: GoogleFonts.raleway(fontSize: 30, color: Colors.black),
+            ),
+          ),
           body: getBody(),
         ),
       ),
