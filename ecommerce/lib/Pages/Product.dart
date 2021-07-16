@@ -52,11 +52,11 @@ class _ProductState extends State<Product> {
                     context,
                     MaterialPageRoute(
                       builder: (_) => ProductDetailPage(
-                          id: dataItems[index]["id"].toString(),
-                          name: dataItems[index]["name"],
-                          code: dataItems[index]["code"],
-                          img: dataItems[index]["img"],
-                          price: dataItems[index]["price"].toString()),
+                          id: dataItems[index].pid.toString(),
+                          name: dataItems[index].pname,
+                          code: dataItems[index].pcode,
+                          img: dataItems[index].pimg,
+                          price: dataItems[index].pprice.toString()),
                     ),
                   );
                 },
@@ -70,7 +70,7 @@ class _ProductState extends State<Product> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Hero(
-                              tag: dataItems[index]['id'].toString(),
+                              tag: dataItems[index].pid.toString(),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Container(
@@ -81,7 +81,7 @@ class _ProductState extends State<Product> {
                                         BorderRadius.all(Radius.circular(20.0)),
                                     image: DecorationImage(
                                         image:
-                                            AssetImage(dataItems[index]['img']),
+                                            AssetImage(dataItems[index].pimg),
                                         fit: BoxFit.cover),
                                   ),
                                 ),
@@ -93,7 +93,7 @@ class _ProductState extends State<Product> {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
-                                dataItems[index]['name'],
+                                dataItems[index].pname,
                                 style: GoogleFonts.montserrat(
                                     letterSpacing: 1.2,
                                     wordSpacing: 1.5,
@@ -109,7 +109,7 @@ class _ProductState extends State<Product> {
                               padding:
                                   const EdgeInsets.fromLTRB(8.0, 0, 8.0, 16.0),
                               child: Text(
-                                " Rs. " + dataItems[index]['price'].toString(),
+                                " Rs. " + dataItems[index].pprice.toString(),
                                 style: GoogleFonts.montserrat(
                                     letterSpacing: 1.2,
                                     color: Colors.black,

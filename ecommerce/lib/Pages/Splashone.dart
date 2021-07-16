@@ -17,8 +17,6 @@ class _SplashOneState extends State<SplashOne> {
 
     return Scaffold(
       body: Container(
-        // height: screenHeight,
-        // width: screenWidth,
         child: Stack(
           children: [
             Container(

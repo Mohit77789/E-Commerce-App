@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class cart {
   int id = 0;
   String name;
@@ -44,117 +46,118 @@ List<cart> cartItems = [
   ),
 ];
 
-List dataItems = [
-  {
-    "id": "1",
-    "name": "Boat Basehead",
-    "code": "Wired earphone\n Tanglefree",
-    "img": "assets/images/p4.png",
-    "price": "599",
-    "promotionPrice": "1799",
-  },
-  {
-    "id": "2",
-    "name": "Boat Airdopes",
-    "code": "TWS earphone \n 12hrs Battery backup",
-    "img": "assets/images/boat.png",
-    "price": "1799",
-    "promotionPrice": "1799",
-  },
-  {
-    "id": "3",
-    "name": "Boat Rockerz",
-    "code": "Bluetooth earphone \n12hrs Battery backup",
-    "img": "assets/images/p2.png",
-    "price": "1799",
-    "promotionPrice": "1799",
-  },
-  {
-    "id": "4",
-    "name": "Headphone",
-    "code": "Wired Earphone",
-    "img": "assets/images/p3.jpg",
-    "price": "1199",
-    "promotionPrice": "1899",
-  },
-  {
-    "id": "5",
-    "name": "Boat Airdopes",
-    "code": "TWS earphone \n12hrs Battery backup",
-    "img": "assets/images/b5.png",
-    "price": "1899",
-    "promotionPrice": "1899",
-  },
-  {
-    "id": "6",
-    "name": "Boat Airdopes",
-    "code": "TWS earphone\n 12hrs Battery backup",
-    "img": "assets/images/b3.jpg",
-    "price": "1999",
-    "promotionPrice": "1999",
-  },
-  {
-    "id": "7",
-    "name": "Boat Airdopes",
-    "code": "TWS earphone\n 12hrs Battery backup",
-    "img": "assets/images/b6.png",
-    "price": "1599",
-    "promotionPrice": "1599",
-  },
-  {
-    "id": "8",
-    "name": "Boat Airdopes",
-    "code": "TWS earphone\n 12hrs Battery backup",
-    "img": "assets/images/boat.png",
-    "price": "1599",
-    "promotionPrice": "1599",
-  },
-  {
-    "id": "9",
-    "name": "Boat Airdopes",
-    "code": "TWS earphone\n 12hrs Battery backup",
-    "img": "assets/images/b7.png",
-    "price": "1799",
-    "promotionPrice": "1799",
-  },
-  {
-    "id": "10",
-    "name": "Boat Airdopes",
-    "code": "TWS earphone \n12hrs Battery backup",
-    "img": "assets/images/boat.png",
-    "price": "1799",
-    "promotionPrice": "1899",
-  },
-  {
-    "id": "11",
-    "name": "Boat Airdopes",
-    "code": "TWS earphone \n12hrs Battery backup",
-    "img": "assets/images/boat.png",
-    "price": "1899",
-    "promotionPrice": "1899",
-  },
-  {
-    "id": "12",
-    "name": "Boat Airdopes",
-    "code": "TWS earphone \n12hrs Battery backup",
-    "img": "assets/images/b4.jpeg",
-    "price": "1999",
-    "promotionPrice": "1999",
-  },
-  {
-    "id": "13",
-    "name": "Boat Airdopes",
-    "code": "TWS earphone \n12hrs Battery backup",
-    "img": "assets/images/boat.png",
-    "price": "1599",
-    "promotionPrice": "1599",
-  },
-  {
-    "id": "14",
-    "name": "Boat Airdopes",
-    "code": "TWS earphone \n12hrs Battery backup",
-    "img": "assets/images/b3.jpg",
-    "price": "1599",
-    "promotionPrice": "1599",
-  }
+class product with ChangeNotifier {
+  int pid = 0;
+  String pname;
+  String pimg;
+  String pcode;
+  String pprice;
+
+  product(
+      {required this.pid,
+      required this.pimg,
+      required this.pname,
+      required this.pcode,
+      required this.pprice});
+}
+
+List<product> dataItems = [
+  product(
+    pid: 1,
+    pname: "Boat Basehead",
+    pcode: "Wired earphone\n Tanglefree",
+    pimg: "assets/images/p4.png",
+    pprice: "599",
+  ),
+  product(
+    pid: 2,
+    pname: "Boat Airdopes",
+    pcode: "TWS earphone \n 12hrs Battery backup",
+    pimg: "assets/images/boat.png",
+    pprice: "1799",
+  ),
+  product(
+    pid: 3,
+    pname: "Boat Rockerz",
+    pcode: "Bluetooth earphone \n12hrs Battery backup",
+    pimg: "assets/images/p2.png",
+    pprice: "1799",
+  ),
+  product(
+    pid: 4,
+    pname: "Headphone",
+    pcode: "Wired Earphone",
+    pimg: "assets/images/p3.jpg",
+    pprice: "1199",
+  ),
+  product(
+    pid: 5,
+    pname: "Boat Airdopes",
+    pcode: "TWS earphone \n12hrs Battery backup",
+    pimg: "assets/images/b5.png",
+    pprice: "1899",
+  ),
+  product(
+    pid: 6,
+    pname: "Boat Airdopes",
+    pcode: "TWS earphone\n 12hrs Battery backup",
+    pimg: "assets/images/b3.jpg",
+    pprice: "1999",
+  ),
+  product(
+    pid: 7,
+    pname: "Boat Airdopes",
+    pcode: "TWS earphone\n 12hrs Battery backup",
+    pimg: "assets/images/b6.png",
+    pprice: "1599",
+  ),
+  product(
+    pid: 8,
+    pname: "Boat Airdopes",
+    pcode: "TWS earphone\n 12hrs Battery backup",
+    pimg: "assets/images/boat.png",
+    pprice: "1599",
+  ),
+  product(
+    pid: 9,
+    pname: "Boat Airdopes",
+    pcode: "TWS earphone\n 12hrs Battery backup",
+    pimg: "assets/images/b7.png",
+    pprice: "1799",
+  ),
+  product(
+    pid: 10,
+    pname: "Boat Airdopes",
+    pcode: "TWS earphone \n12hrs Battery backup",
+    pimg: "assets/images/boat.png",
+    pprice: "1799",
+  ),
+  product(
+    pid: 11,
+    pname: "Boat Airdopes",
+    pcode: "TWS earphone \n12hrs Battery backup",
+    pimg: "assets/images/boat.png",
+    pprice: "1899",
+  ),
+  product(
+    pid: 12,
+    pname: "Boat Airdopes",
+    pcode: "TWS earphone \n12hrs Battery backup",
+    pimg: "assets/images/b4.jpeg",
+    pprice: "1999",
+  ),
+  product(
+    pid: 13,
+    pname: "Boat Airdopes",
+    pcode: "TWS earphone \n12hrs Battery backup",
+    pimg: "assets/images/boat.png",
+    pprice: "1599",
+  ),
+  product(
+    pid: 14,
+    pname: "Boat Airdopes",
+    pcode: "TWS earphone \n12hrs Battery backup",
+    pimg: "assets/images/b3.jpg",
+    pprice: "1599",
+  )
 ];
