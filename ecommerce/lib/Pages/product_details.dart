@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-// import 'package:ecommerce/theme/colors.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:ecommerce/pages/Cart.dart';
 
 class ProductDetailPage extends StatefulWidget {
   final String id;
@@ -145,11 +143,14 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       fit: FlexFit.loose,
                       child: RawMaterialButton(
                         elevation: 2,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Cart()));
+                        },
                         constraints: BoxConstraints(
                           minWidth: 10,
                         ),
-                        child: Icon(Icons.favorite_border,
+                        child: Icon(Icons.shopping_cart,
                             color: Colors.black, size: 30),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -205,7 +206,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        "Rs" + widget.price,
+                        "Rs " + widget.price,
                         style: TextStyle(
                           fontSize: 32,
                           color: Colors.black,

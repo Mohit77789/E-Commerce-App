@@ -102,7 +102,7 @@ class _ProfileState extends State<Profile> {
                             BoxShadow(
                                 offset: Offset(0.0, 0.0),
                                 color: Colors.black,
-                                blurRadius: 6.0),
+                                blurRadius: 4.0),
                           ],
                           color: Colors.grey,
                           borderRadius: BorderRadius.circular(20.0),
