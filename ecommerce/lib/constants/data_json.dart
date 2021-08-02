@@ -25,7 +25,7 @@ List<cart> cartItems = [
   ),
   cart(
     id: 2,
-    name: "Boat Basehead",
+    name: "Basehead",
     code: "Wired earphone",
     img: "assets/images/p4.png",
     price: "599",
@@ -64,7 +64,7 @@ class product with ChangeNotifier {
 List<product> dataItems = [
   product(
     pid: 1,
-    pname: "Boat Basehead",
+    pname: "Basehead",
     pcode: "Wired earphone\n Tanglefree",
     pimg: "assets/images/p4.png",
     pprice: "599",

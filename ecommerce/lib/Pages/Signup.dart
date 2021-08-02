@@ -84,20 +84,25 @@ class _SignupState extends State<Signup> {
                   ),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text("Already have an account?"),
-                  InkWell(
-                    onTap: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LoginPage())),
-                    child: Text(
-                      " Login",
-                      style:
-                          TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
-                    ),
-                  )
-                ],
+              Padding(
+                padding: const EdgeInsets.only(bottom: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text("Already have an account?"),
+                    InkWell(
+                      onTap: () => Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LoginPage())),
+                      child: Text(
+                        " Login",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xff4F53CA),
+                            fontSize: 18),
+                      ),
+                    )
+                  ],
+                ),
               )
             ],
           ),
@@ -123,12 +128,11 @@ Widget inputData({label, obscureText = false}) {
       TextField(
         obscureText: obscureText,
         decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.grey.shade400),
-            ),
-            border: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey.shade400))),
+          contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(36.0),
+          ),
+        ),
       ),
       SizedBox(
         height: 10,

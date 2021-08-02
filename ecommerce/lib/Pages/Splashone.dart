@@ -1,4 +1,5 @@
 import 'package:ecommerce/Pages/LoginPage.dart';
+import 'package:ecommerce/Pages/Signup.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -66,6 +67,32 @@ class _SplashOneState extends State<SplashOne> {
                     ),
                   ),
                 ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 770),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "New here?",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                        fontSize: 15),
+                  ),
+                  InkWell(
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Signup())),
+                    child: Text(
+                      " Signup",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff4F53CA),
+                          fontSize: 18),
+                    ),
+                  )
+                ],
               ),
             )
           ],

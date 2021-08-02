@@ -2,7 +2,6 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ecommerce/widgets/navigation.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce/Pages/Signup.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -153,50 +152,6 @@ class _LoginPageState extends State<LoginPage> {
                                     fontSize: 18,
                                   ),
                                 ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-
-                    // SignUp Button
-                    SizedBox(
-                      height: 50.0,
-                      child: InkWell(
-                        onTap: () => Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Signup())),
-                        child: AnimatedContainer(
-                          duration: Duration(microseconds: 500),
-                          height: 50,
-                          width: 150,
-                          decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                  colors: [
-                                    const Color(0xff303C87),
-                                    const Color(0xff171F53)
-                                  ],
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter),
-                              // begins:Alignment.topCenter,
-
-                              borderRadius: BorderRadius.circular(60.0),
-                              boxShadow: [
-                                BoxShadow(
-                                    offset: Offset(0.0, 0.0),
-                                    color: Colors.black,
-                                    blurRadius: 6.0),
-                              ]),
-                          child: Center(
-                            child: Text(
-                              "Signup",
-                              style: GoogleFonts.raleway(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ),
                         ),
                       ),
                     ),
