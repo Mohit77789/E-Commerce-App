@@ -35,13 +35,13 @@ List<cart> cartItems = [
     name: "Boat Rockerz",
     code: "Bluetooth earphone \n12hrs Battery backup",
     img: "assets/images/p2.png",
-    price: "1799",
+    price: "1299",
   ),
   cart(
     id: 4,
     name: "Boat Airdopes",
     code: "Boat Airdopes",
-    img: "assets/images/b6.png",
+    img: "assets/images/b5.png",
     price: "1799",
   ),
 ];
