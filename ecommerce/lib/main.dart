@@ -1,6 +1,6 @@
 import 'package:ecommerce/Pages/splash.dart';
 import 'package:flutter/material.dart';
-
+ 
 void main() {
   runApp(MyApp());
 }
